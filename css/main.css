@@ -33,13 +33,13 @@ footer {
     font-size: .8em;
 }
 
-ul.posts { 
+ul { 
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     margin: 20px auto 40px; 
     font-size: 1.5em;
 }
 
-ul.posts li {
+ul li {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     list-style: none;
 }
