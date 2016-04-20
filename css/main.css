@@ -3,7 +3,7 @@ body {
     width: 70%;
 }
 nav ul, footer ul {
-    font-family:'Verdana', 'Geneva', 'Sans-Serif';
+    font-family:'Times New Roman', 'Georgia', 'Sans-Serif';
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -21,7 +21,7 @@ a:hover {
 }
 h1 {
     font-size: 2.5em;
-    font-family:'Verdana', 'Geneva', 'Sans-Serif';
+    font-family:'Times New Roman', 'Georgia', 'Sans-Serif';
 }
 p {
     font-size: 1.3em;
@@ -34,12 +34,12 @@ footer {
 }
 
 ul { 
-    font-family:'Verdana', 'Geneva', 'Sans-Serif';
+    font-family:'Times New Roman', 'Georgia', 'Sans-Serif';
     margin: 20px auto 40px; 
     font-size: 1.0em;
 }
 
 ul li {
-    font-family:'Verdana', 'Geneva', 'Sans-Serif';
+    font-family:'Times New Roman', 'Georgia', 'Sans-Serif';
     list-style: none;
 }
