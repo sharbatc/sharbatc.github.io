@@ -1,0 +1,30 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from IPython.display import Image
+import pandas as pd
+
+df = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/'
+                 'housing/housing.data',
+                 header=None,
+                 sep='\s+')
+
+df.columns = ['CRIM', 'ZN', 'INDUS', 'CHAS', 
+              'NOX', 'RM', 'AGE', 'DIS', 'RAD', 
+              'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+
+def lin_regplot(X, y, model):
+    plt.scatter(X, y, c='lightblue')
+    plt.plot(X, model.predict(X), color='red', linewidth=2)    
+    return 
+
+slr = LinearRegression()
+slr.fit(X, y)
+y_pred = slr.predict(X)
+print('Slope: %.3f' % slr.coef_[0])
+print('Intercept: %.3f' % slr.intercept_)
+
+lin_regplot(X, y, slr)
+plt.xlabel('Tax Rate [TAX]')
+plt.ylabel('Price in $1000\'s [MEDV]')
+plt.tight_layout()

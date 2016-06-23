@@ -1,0 +1,18 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import datasets
+from sklearn import svm
+
+digits = datasets.load_digits()
+
+i = 14
+plt.imshow(digits.images[i], cmap='Greys')
+plt.show()
+
+clf = svm.SVC(gamma=0.001, C=100.)
+
+new = i - 1797
+clf.fit(digits.data[:new], digits.target[:new]);
+prediction = clf.predict(digits.data[(i-1797):]);
+
+print('The number is',prediction[0],'.')
