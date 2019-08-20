@@ -1,3 +1,7 @@
 name: Sharbatanu Chatterjee
 markdown: kramdown
 languages: ["en","bn","hi","fr","de"]
+# plugins:
+#   - jekyll-feed
+#   - jekyll-sitemap
+#   - jekyll-seo-tag
