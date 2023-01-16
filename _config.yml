@@ -6,6 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
+lang: en 
+languages: ["en", "fr", "bn"]
+
 locale                   : "en"
 title                    : "Sharbat's Homepage"
 title_separator          : "-"
