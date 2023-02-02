@@ -7,8 +7,6 @@ redirect_from:
   - /resume
 ---
 
-[comment]: # {% include base_path %}
-
 Education
 ======
 * B.Tech. in Computer Science & Engineering, IIT Kanpur, India, 2014
