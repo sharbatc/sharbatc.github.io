@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+[comment]: # {% include base_path %}
 
 Education
 ======
@@ -18,7 +18,7 @@ Education
 Work experience
 ======
 * 2019-2020: Research Assistant
-  * UCL
+  * University College London (UCL)
   * Duties included: Setting up a high-throughput behavioural rig
   * Supervisor: Dr. Athena Akrami
   
