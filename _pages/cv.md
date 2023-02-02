@@ -6,7 +6,6 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-
 Education
 ======
 * B.Tech. in Computer Science & Engineering, IIT Kanpur, India, 2014
