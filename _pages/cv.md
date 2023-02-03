@@ -1,11 +1,15 @@
 ---
 layout: archive
-title: "CV"
+title: "Curriculum vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
+{% include base_path %}
+
+_Also available as a pdf [here](http://sharbatc.github.io/files/resume.pdf)_
+
 Education
 ======
 * B.Tech. in Computer Science & Engineering, IIT Kanpur, India, 2014
@@ -16,9 +20,8 @@ Work experience
 ======
 * 2019-2020: Research Assistant
   * University College London (UCL)
-  * Duties included: Setting up a high-throughput behavioural rig
   * Supervisor: Dr. Athena Akrami
-  
+    - Setup a high-throughput behavioural paradigm on rodent working memory
 
 Publications
 ======
