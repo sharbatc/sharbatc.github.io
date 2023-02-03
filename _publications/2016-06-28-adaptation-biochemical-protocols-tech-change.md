@@ -6,7 +6,7 @@ excerpt: 'Adaptation of Biochemical Protocols to Handle Technology-Change for Di
 date: 2016-06-28
 venue: 'IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems'
 paperurl: 'https://ieeexplore.ieee.org/document/7501482'
-citation: 'S. Bhattacharjee, S. Chatterjee, A. Banerjee, T. -Y. Ho, K. Chakrabarty and B. B. Bhattacharya, "Adaptation of Biochemical Protocols to Handle Technology-Change for Digital Microfluidics," in IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, vol. 36, no. 3, pp. 370-383, March 2017'
+citation: ''
 ---
 
 [Download paper here](http://sharbatc.github.io/files/bhattacharjee2016.pdf)
