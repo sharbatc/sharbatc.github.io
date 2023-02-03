@@ -8,7 +8,7 @@ redirect_from:
 ---
 {% include base_path %}
 
-_Also available as a pdf [here](http://sharbatc.github.io/files/resume.pdf)_
+_Also available as a pdf [here](http://sharbatc.github.io/files/resume.pdf)._
 
 Education
 ======
