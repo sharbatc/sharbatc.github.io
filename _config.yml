@@ -10,7 +10,7 @@ lang: en
 languages: ["en", "fr", "bn"]
 
 locale                   : "en"
-title                    : "Sharbat's Homepage"
+title                    : "Sharbat's home page"
 title_separator          : "-"
 name                     : &name "Sharbatanu Chatterjee"
 description              : &description "personal description"
