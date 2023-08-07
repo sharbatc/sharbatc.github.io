@@ -1,12 +1,12 @@
 ---
-title: "শর্বতনু চট্টোপাধ্যায়"
+title: " "
 permalink: /
 lang: en
 ref: aboutme
 header:
   overlay_image: /Boating_JR_cropped.jpeg
-  overlay_filter: 0.2
-  caption: "[_image credits_](https://commons.wikimedia.org/wiki/File:Boating_(6124606361).jpg)"
+  overlay_filter: 0.15
+  caption: "Photo reproduced from [_Jamini Roy_](https://en.wikipedia.org/wiki/Jamini_Roy)'s Wikipedia page"
 excerpt: ""
 author_profile: true
 redirect_from: 
