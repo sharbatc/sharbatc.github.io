@@ -27,4 +27,4 @@ I am interested in languages, travel, history, political theory, science communi
 
 Where do I come from?
 ------
-I was born in the banlieues (suburban areas) of the city of Calcutta in West Bengal, India. I spent my first 18 years there, and subsequently moved to Kanpur (Uttar Pradesh, India), Lausanne (Vaud, Switzerland), London (UK), before moving to Paris (France) where I currently live. I don't know where I exactly come from anymore.
+I was born in the banlieues (suburban areas) of the city of Calcutta (West Bengal, India). I spent my first 18 years there, and subsequently moved to Kanpur (Uttar Pradesh, India), Lausanne (Vaud, Switzerland), and London (United Kingdom), before moving to Paris (France) where I currently live. I don't know where I exactly come from anymore.
