@@ -24,3 +24,7 @@ I have previously worked on rodent behaviour (at the [SWC](https://www.sainsbury
 What else do I do?
 ------
 I am interested in languages, travel, history, political theory, science communication, & immigration. I blog on languages & linguistics, travel, & history. I co-organise a reading group on political theory. I regularly participate in communicating science to the wider public, & highlight the role of immigration & immigrants in science.
+
+Where do I come from?
+------
+I was born in the banlieues (suburban areas) of the city of Calcutta in West Bengal, India. I spent my first 18 years there, and subsequently moved to Kanpur (Uttar Pradesh, India), Lausanne (Vaud, Switzerland), London (UK), before moving to Paris (France) where I currently live. I don't know where I exactly come from anymore.

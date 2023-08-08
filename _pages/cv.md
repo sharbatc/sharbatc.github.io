@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Curriculum vitae"
+title: "Curriculum vitae (CV)"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -8,7 +8,7 @@ redirect_from:
 ---
 {% include base_path %}
 
-_Also available as a pdf [here](http://sharbatc.github.io/files/resume.pdf)._
+_My CV is also available as a pdf [here](http://sharbatc.github.io/files/resume.pdf)._
 
 Education
 ======
