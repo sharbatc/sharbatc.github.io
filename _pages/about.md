@@ -3,10 +3,6 @@ title: " "
 permalink: /
 lang: en
 ref: aboutme
-header:
-  overlay_image: /Boating_JR_cropped.jpeg
-  overlay_filter: 0.15
-  caption: "Photo reproduced from [_Jamini Roy_](https://en.wikipedia.org/wiki/Jamini_Roy)'s Wikipedia page"
 excerpt: ""
 author_profile: true
 redirect_from: 
