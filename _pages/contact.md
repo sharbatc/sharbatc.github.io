@@ -8,4 +8,4 @@ redirect_from:
 ---
 {% include base_path %}
 
-Contact me via the social media links on the left, or email me at firstname, followed by 444, followed by `@gmail.com`, or my `firstname.lastname@sorbonne-universite.fr`.
+Contact me via the social media links on the left, or email me at my professional email at `sharbatanu.chatterjee@sorbonne-universite.fr`, or my personal one at `sharbatanu@gmail.com`.
