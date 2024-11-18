@@ -8,7 +8,11 @@ redirect_from:
 ---
 {% include base_path %}
 
-Please RSVP if you want to participate in the pot de thèse after the defence (so that I can have a head count) on this [Google form](https://forms.gle/rm4JL9U9wAYY81bK7)._
+I am happy to invite you to my PhD defence!
+
+Title
+======
+Behavioural strategies \& neuronal circuits for postural control
 
 Date
 ======
@@ -25,8 +29,15 @@ Esclangon Building,
 4 place Jussieu, 
 75005 Paris
   
-The thesis will be presented in English.
-
 Zoom
 ======
 The link to follow the defence online (via Zoom) will be available soon.
+
+Further information
+======
+The thesis will be presented in English.
+
+Please RSVP if you want to participate in the pot de thèse after the defence (so that I can have a head count) on this [Google form](https://forms.gle/rm4JL9U9wAYY81bK7).
+
+A poster for the defence can be found [here](http://sharbatc.github.io/files/sharbatdefenceposter.pdf).
+
