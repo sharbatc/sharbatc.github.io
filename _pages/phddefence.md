@@ -12,7 +12,7 @@ I am happy to invite you to my PhD defence!
 
 Title
 ======
-Behavioural strategies \& neuronal circuits for postural control
+Behavioural strategies & neuronal circuits for postural control
 
 Date
 ======
