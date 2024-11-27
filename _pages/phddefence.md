@@ -31,7 +31,7 @@ Esclangon Building,
   
 Zoom
 ======
-The link to follow the defence online (via Zoom) can be found [here](https://zoom.us/j/9828843156?pwd=GtMYRed00zaYCayqtWpSASjHkLvBnr.1&omn=95463577339). Please refer to the email invitation sent out to find the Meeting ID and Password. If you haven't received it and wish to receive it, please contact Sharbat.
+The link to follow the defence online (via Zoom) can be found in the email invitation sent out by Sharbat. If you haven't received it and wish to receive it, please contact Sharbat.
 
 Further information
 ======
