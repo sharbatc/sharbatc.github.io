@@ -9,7 +9,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Welcome to my (Sharbat's i.e. Sharbatanu Chatterjee's) homepage! I am about to start as a postdoctoral researcher in Paris. I got my PhD (Docteur de Sorbonne Université) from the [Laboratoire Jean Perrin](https://www.labojeanperrin.fr/) of Sorbonne Université, Paris - a laboratory that puts me at the interface of biology and physics, under the supervision of Dr. Volker Bormuth. I was enrolled at the [Sorbonne Université](https://www.sorbonne-universite.fr/) under the doctoral school (école doctorale) in physics, called [EDPIF](https://www.edpif.org/en/), i.e. l'École doctorale physique en Île-de-France.
+Welcome to my (Sharbat's i.e. Sharbatanu Chatterjee's) homepage! I am a postdoctoral researcher in Paris, working in the team of Dr. Tihana Jovanic at the Institut de Neurosciences Paris-Saclay [NeuroPSI](https://neuropsi.cnrs.fr/). I got my PhD (Docteur de Sorbonne Université) from the [Laboratoire Jean Perrin](https://www.labojeanperrin.fr/) of Sorbonne Université, Paris - a laboratory that puts me at the interface of biology and physics, under the supervision of Dr. Volker Bormuth. I was enrolled at the [Sorbonne Université](https://www.sorbonne-universite.fr/) under the doctoral school (école doctorale) in physics, called [EDPIF](https://www.edpif.org/en/), i.e. l'École doctorale physique en Île-de-France.
 
 What do I do?
 ------
