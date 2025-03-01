@@ -8,4 +8,4 @@ redirect_from:
 ---
 {% include base_path %}
 
-Contact me via the social media links on the left, or email me at my professional email at `sharbatanu.chatterjee@sorbonne-universite.fr`, or my personal one at `sharbatanu@gmail.com`.
+Contact me via the social media links on the left, or email me at my professional email at `sharbatanu.chatterjee@cnrs.fr`, or my personal one at `sharbatanu@gmail.com`.
