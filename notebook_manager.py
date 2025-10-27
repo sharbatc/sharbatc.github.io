@@ -115,13 +115,21 @@ class NotebookManager:
                 # Disable any problematic features
                 exporter.anchor_link_text = ''
                 
+                # Important: Enable embed_images to handle matplotlib plots properly
+                exporter.embed_images = True
+                
                 (body, resources) = exporter.from_filename(str(notebook_file))
+                
+                # Handle any images in resources
+                if hasattr(resources, 'outputs') and resources.outputs:
+                    print(f"Found {len(resources.outputs)} output images for {slug}")
                 
             except Exception as e:
                 print(f"Basic template failed: {e}")
-                # Fallback: try without any template customization
+                # Fallback: try without any template customization but keep image embedding
                 try:
                     fallback_exporter = HTMLExporter()
+                    fallback_exporter.embed_images = True
                     (body, resources) = fallback_exporter.from_filename(str(notebook_file))
                 except Exception as e2:
                     print(f"Fallback conversion also failed: {e2}")

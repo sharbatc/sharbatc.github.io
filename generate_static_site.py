@@ -156,6 +156,29 @@ class StaticSiteGenerator:
         except Exception as e:
             print(f"⚠️  Could not discover blog posts: {e}")
     
+    def discover_notebooks(self):
+        """Discover individual notebooks and add them to pages list"""
+        try:
+            from pathlib import Path
+            
+            # Find all notebook files
+            notebooks_dir = Path("content/notebooks")
+            if notebooks_dir.exists():
+                notebook_files = list(notebooks_dir.glob("*.ipynb"))
+                
+                languages = ['en', 'fr', 'bn']
+                for notebook_file in notebook_files:
+                    slug = notebook_file.stem  # filename without .ipynb extension
+                    for lang in languages:
+                        notebook_url = f"/{lang}/notebooks/{slug}"
+                        if notebook_url not in self.pages:
+                            self.pages.append(notebook_url)
+                
+                print(f"✅ Discovered {len(notebook_files)} notebooks for {len(languages)} languages")
+                            
+        except Exception as e:
+            print(f"⚠️  Could not discover notebooks: {e}")
+    
     def generate_404_page(self):
         """Generate a 404 page"""
         try:
@@ -202,6 +225,7 @@ class StaticSiteGenerator:
             
             # Step 4: Discover additional pages
             self.discover_blog_posts()
+            self.discover_notebooks()
             
             # Step 5: Generate all pages
             success_count = 0
