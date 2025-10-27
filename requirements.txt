@@ -1,6 +1,5 @@
 # Python version requirement
 # Requires Python 3.9 or higher
-python_version >= "3.9"
 
 # Core web framework
 fastapi==0.115.2
