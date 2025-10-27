@@ -17,6 +17,7 @@ function initializeTheme() {
     } catch (e) {
         // LocalStorage might not be available, use default
         currentTheme = 'dark';
+        console.log('LocalStorage not available, using default theme');
     }
     
     applyTheme(currentTheme);
@@ -35,29 +36,39 @@ function toggleTheme() {
     
     applyTheme(currentTheme);
     updateThemeIcon(currentTheme);
+    
+    // Force a small delay to ensure changes are applied
+    setTimeout(() => {
+        console.log('Theme changed to:', currentTheme);
+    }, 100);
 }
 
 function applyTheme(theme) {
     const html = document.documentElement;
     const body = document.body;
     
-    // Remove any existing theme classes
+    // Remove any existing theme classes and attributes
     html.classList.remove('light-theme', 'dark-theme');
     body.classList.remove('light-theme', 'dark-theme');
-    
-    // Remove data attribute
     html.removeAttribute('data-theme');
     
-    // Apply new theme
+    // Apply new theme with multiple methods for compatibility
     if (theme === 'light') {
         html.classList.add('light-theme');
         body.classList.add('light-theme');
         html.setAttribute('data-theme', 'light');
+        html.style.setProperty('color-scheme', 'light');
     } else {
         html.classList.add('dark-theme');
         body.classList.add('dark-theme'); 
         html.setAttribute('data-theme', 'dark');
+        html.style.setProperty('color-scheme', 'dark');
     }
+    
+    // Force repaint
+    html.style.display = 'none';
+    html.offsetHeight; // Trigger reflow
+    html.style.display = '';
 }
 
 function updateThemeIcon(theme) {
@@ -65,8 +76,10 @@ function updateThemeIcon(theme) {
     if (themeIcon) {
         if (theme === 'light') {
             themeIcon.className = 'fas fa-moon';
+            themeIcon.setAttribute('aria-label', 'Switch to dark mode');
         } else {
             themeIcon.className = 'fas fa-sun';
+            themeIcon.setAttribute('aria-label', 'Switch to light mode');
         }
     }
 }
