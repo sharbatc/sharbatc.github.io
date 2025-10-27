@@ -39,6 +39,25 @@ body {
     background-color: var(--theme-bg);
     padding-top: 76px; /* Account for fixed navbar */
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.95rem; /* Slightly smaller base font size */
+}
+
+/* Adjust heading sizes slightly */
+h1 { font-size: calc(2.3rem + 0.6vw); }
+h2 { font-size: calc(1.8rem + 0.3vw); }
+h3 { font-size: calc(1.5rem + 0.3vw); }
+h4 { font-size: calc(1.2rem + 0.15vw); }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+/* Adjust lead text */
+.lead {
+    font-size: 1.15rem;
+}
+
+/* Adjust display headings */
+.display-4 {
+    font-size: calc(2.2rem + 1.2vw);
 }
 
 /* Language-specific font families */
