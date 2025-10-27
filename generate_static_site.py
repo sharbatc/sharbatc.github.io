@@ -56,14 +56,10 @@ class StaticSiteGenerator:
         """Start the FastAPI development server"""
         print("Starting FastAPI server...")
         try:
-            # Get the conda environment path
-            conda_env_path = os.environ.get('CONDA_PREFIX', '')
-            if conda_env_path:
-                python_path = os.path.join(conda_env_path, 'bin', 'python')
-            else:
-                python_path = sys.executable
+            # Use the current Python executable (works in both local conda env and GitHub Actions)
+            python_path = sys.executable
                 
-            # Start server in background with proper conda python
+            # Start server in background
             self.server_process = subprocess.Popen([
                 python_path, "-m", "uvicorn", 
                 "main:app", 
