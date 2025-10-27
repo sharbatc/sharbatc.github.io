@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}{{ news_item.title }} - {{ translations[lang]['site_title'] }}{% endblock %}
+{% block description %}{{ news_item.excerpt }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- News Info -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-light">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-info-circle me-2"></i>Article Info
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-2">
+                        <small class="text-muted d-block">Published</small>
+                        <strong>{{ news_item.date.strftime('%B %d, %Y') }}</strong>
+                    </div>
+                    <div class="mb-2">
+                        <small class="text-muted d-block">Category</small>
+                        <span class="badge bg-primary">{{ news_item.category }}</span>
+                    </div>
+                    {% if news_item.tags %}
+                    <div class="mb-2">
+                        <small class="text-muted d-block">Tags</small>
+                        {% for tag in news_item.tags %}
+                        <a href="/{{ lang }}/news?tag={{ tag }}" class="badge bg-light text-dark text-decoration-none me-1">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <a href="/{{ lang }}/news" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>Back to News
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-lg-8">
+            <article>
+                <!-- Header -->
+                <header class="mb-5">
+                    <h1 class="display-5 fw-bold mb-3">{{ news_item.title }}</h1>
+                    
+                    <div class="news-meta mb-4">
+                        <div class="d-flex flex-wrap align-items-center">
+                            <span class="me-4">
+                                <i class="fas fa-calendar-alt me-1"></i>
+                                {{ news_item.date.strftime('%B %d, %Y') }}
+                            </span>
+                            {% if news_item.category %}
+                            <span class="me-4">
+                                <i class="fas fa-tag me-1"></i>
+                                <a href="/{{ lang }}/news?category={{ news_item.category }}" class="text-decoration-none">
+                                    {{ news_item.category }}
+                                </a>
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Content -->
+                <div class="news-content">
+                    {{ news_item.html_content | safe }}
+                </div>
+            </article>
+            
+            <!-- Navigation -->
+            <div class="mt-5">
+                <a href="/{{ lang }}/news" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left me-2"></i>{{ translations[lang]['back_to_news'] or 'Back to News' }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

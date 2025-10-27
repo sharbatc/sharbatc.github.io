@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সর্বশেষ সংবাদ ও আপডেট - শর্বতনু চ্যাটার্জী - স্নায়ুবিজ্ঞানী ও গবেষক</title>
+    
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="http://localhost:8000/static/css/main.css" rel="stylesheet">
+    
+    <!-- Meta tags -->
+    <meta name="description" content="স্নায়ুবিজ্ঞানে পোস্টডক্টরাল গবেষক, জেব্রাফিশ মডেলের মাধ্যমে মস্তিষ্ক-আচরণের সম্পর্ক অধ্যয়ন করছেন">
+    <meta name="author" content="Sharbatanu Chatterjee">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/bn/news">
+    <meta property="og:title" content="শর্বতনু চ্যাটার্জী - স্নায়ুবিজ্ঞানী ও গবেষক">
+    <meta property="og:description" content="স্নায়ুবিজ্ঞানে পোস্টডক্টরাল গবেষক, জেব্রাফিশ মডেলের মাধ্যমে মস্তিষ্ক-আচরণের সম্পর্ক অধ্যয়ন করছেন">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:8000/bn/news">
+    <meta property="twitter:title" content="শর্বতনু চ্যাটার্জী - স্নায়ুবিজ্ঞানী ও গবেষক">
+    <meta property="twitter:description" content="স্নায়ুবিজ্ঞানে পোস্টডক্টরাল গবেষক, জেব্রাফিশ মডেলের মাধ্যমে মস্তিষ্ক-আচরণের সম্পর্ক অধ্যয়ন করছেন">
+    
+    
+<style>
+.news-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.news-timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--secondary-color), transparent);
+}
+
+.news-item {
+    position: relative;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 1.5rem;
+    width: 16px;
+    height: 16px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+.news-item.importance-high::before {
+    background: #e74c3c;
+    box-shadow: 0 0 0 2px #e74c3c;
+}
+
+.news-item.importance-low::before {
+    background: #95a5a6;
+    box-shadow: 0 0 0 2px #95a5a6;
+}
+
+.news-date {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.news-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.category-research { background-color: #3498db; }
+.category-career { background-color: #2ecc71; }
+.category-academic { background-color: #f39c12; }
+.category-personal { background-color: #9b59b6; }
+.category-general { background-color: #95a5a6; }
+
+@media (max-width: 768px) {
+    .news-timeline {
+        padding-left: 1rem;
+    }
+    
+    .news-timeline::before {
+        left: 0.5rem;
+    }
+    
+    .news-item::before {
+        left: -0.5rem;
+        width: 12px;
+        height: 12px;
+    }
+}
+</style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/bn/">
+                <i class="fas fa-brain me-2"></i>
+                শর্বতনু চ্যাটার্জী
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/bn/">
+                            <i class="fas fa-home me-1"></i>হোম
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/bn/blog">
+                            <i class="fas fa-blog me-1"></i>ব্লগ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/bn/news">
+                            <i class="fas fa-newspaper me-1"></i>সংবাদ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/bn/publications">
+                            <i class="fas fa-graduation-cap me-1"></i>প্রকাশনা
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/bn/notebooks">
+                            <i class="fas fa-book me-1"></i>নোটবুক
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/bn/talks">
+                            <i class="fas fa-microphone me-1"></i>বক্তৃতা
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/bn/teaching">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>শিক্ষাদান
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Language Switcher -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe me-1"></i>
+                        বাংলা
+                        
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        <li>
+                            <a class="dropdown-item " 
+                               href="/en/news">
+                                <i class="flag-icon flag-icon-us me-2"></i>English
+                                
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item " 
+                               href="/fr/news">
+                                <i class="flag-icon flag-icon-fr me-2"></i>Français
+                                
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item active" 
+                               href="/bn/news">
+                                <i class="flag-icon flag-icon-bd me-2"></i>বাংলা
+                                
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <button class="theme-toggle btn btn-outline-light ms-2" type="button" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+<div class="container-fluid px-0">
+    <!-- Hero Section -->
+    <section class="hero-section py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 mb-3 fw-bold">সর্বশেষ সংবাদ ও আপডেট</h1>
+                    <p class="lead mb-4">আমার গবেষণা এবং কর্মজীবনের সাম্প্রতিক উন্নয়ন</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <!-- Categories Filter -->
+                    
+
+                    <!-- Recent Highlights -->
+                    
+
+                    <!-- Subscribe -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-bell me-2"></i>Stay Updated
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-muted small mb-3">
+                                Follow my research updates and academic journey. 
+                                Connect with me on social media for the latest news.
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="https://twitter.com/sharbatc" class="btn btn-outline-primary btn-sm flex-fill">
+                                    <i class="fab fa-twitter me-1"></i>Twitter
+                                </a>
+                                <a href="https://linkedin.com/in/sharbatc" class="btn btn-outline-primary btn-sm flex-fill">
+                                    <i class="fab fa-linkedin me-1"></i>LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-8">
+            
+            <!-- Empty State -->
+            <div class="text-center py-5">
+                <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
+                <h3 class="text-muted">No news updates yet</h3>
+                <p class="text-muted">Check back soon for the latest updates!</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Sharbatanu Chatterjee. সর্বস্বত্ব সংরক্ষিত।</p>
+                </div>
+                <div class="col-md-6 text-end footer-icons">
+                    <a href="mailto:sharbatan.chatterjee@cnrs.fr" class="text-light me-3">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://twitter.com/sharbat_c" class="text-light me-3">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/sharbatc" class="text-light me-3">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" class="text-light">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://localhost:8000/static/js/main.js"></script>
+    
+</body>
+</html>

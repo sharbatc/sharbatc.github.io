@@ -1,0 +1,12 @@
+<!-- This is a placeholder file for your profile photo -->
+<!-- Replace this file with your actual photo: -->
+<!-- cp your-photo.jpg static/images/personal/profile-photo.jpg -->
+
+<!-- Recommended specifications: -->
+<!-- - Format: JPG or PNG -->
+<!-- - Size: 400x400px (square) for best results -->
+<!-- - File size: Under 500KB -->
+<!-- - Professional headshot or academic photo -->
+
+<!-- For now, this is a text placeholder that will show as a broken image -->
+<!-- indicating where your photo should be placed -->

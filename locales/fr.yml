@@ -1,0 +1,59 @@
+# French translations
+fr:
+  # Site info
+  site_title: "Sharbatanu Chatterjee - Neuroscientifique & Chercheur"
+  site_description: "Chercheur postdoctoral en neurosciences, étudiant les relations cerveau-comportement via des modèles de poisson-zèbre"
+  name: "Sharbatanu Chatterjee"
+  
+  # Navigation
+  nav_home: "Accueil"
+  nav_blog: "Blog"
+  nav_notebooks: "Notebooks"
+  nav_news: "Actualités"
+  nav_publications: "Publications"
+  nav_talks: "Conférences"
+  nav_teaching: "Enseignement"
+  
+  # Home page
+  welcome_title: "Bienvenue sur ma page d'accueil !"
+  intro_text: "Je suis chercheur postdoctoral à Paris, travaillant dans l'équipe du Dr. Tihana Jovanic à l'Institut de Neurosciences Paris-Saclay."
+  what_i_do_title: "Que fais-je ?"
+  what_i_do_text: "Je travaille généralement dans le domaine des neurosciences - pour essayer de comprendre comment le cerveau mène au comportement. Pour mon doctorat, j'ai étudié le contrôle de la posture ou de l'équilibre, avec l'aide de l'animal modèle - le poisson-zèbre."
+  what_else_title: "Que fais-je d'autre ?"
+  what_else_text: "Je m'intéresse aux langues, aux voyages, à l'histoire, à la théorie politique, à la communication scientifique et à l'immigration. Je blogue sur les langues et la linguistique, les voyages et l'histoire."
+  where_from_title: "D'où viens-je ?"
+  where_from_text: "Je suis né dans les banlieues de la ville de Calcutta (Bengale occidental, Inde). J'ai passé mes 18 premières années là-bas, puis j'ai déménagé à Kanpur, Lausanne, Londres, avant de m'installer à Paris où je vis actuellement."
+  
+  # Blog
+  blog_title: "Blog Académique"
+  blog_subtitle: "Réflexions sur les neurosciences, la recherche et le monde académique"
+  read_more: "Lire la suite"
+  published_on: "Publié le"
+  
+  # Notebooks
+  notebooks_title: "Notebooks Jupyter"
+  notebooks_subtitle: "Recherche et analyse interactives"
+  view_notebook: "Voir le Notebook"
+  download_notebook: "Télécharger"
+  
+  # News
+  news_title: "Dernières Nouvelles & Mises à Jour"
+  news_subtitle: "Développements récents dans ma recherche et ma carrière"
+  back_to_news: "Retour aux Nouvelles"
+  recent_news: "Nouvelles Récentes"
+  categories: "Catégories"
+  
+  # Publications
+  publications_title: "Publications"
+  publications_subtitle: "Articles évalués par les pairs et actes de conférences"
+  
+  # Talks
+  talks_title: "Conférences & Présentations"
+  talks_subtitle: "Présentations de conférences et conférences invitées"
+  
+  # Teaching
+  teaching_title: "Enseignement"
+  teaching_subtitle: "Cours et activités éducatives"
+  
+  # Footer
+  footer_rights: "Tous droits réservés."

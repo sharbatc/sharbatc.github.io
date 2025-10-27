@@ -1,0 +1,393 @@
+{% extends "base.html" %}
+
+{% block title %}{{ notebook.title }} - {{ translations[lang]['site_title'] }}{% endblock %}
+{% block description %}{{ notebook.description }}{% endblock %}
+
+{% block extra_head %}
+<!-- Jupyter notebook styling -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+<style>
+/* Jupyter notebook specific styles */
+.nb-container {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.nb-Cell {
+    border: none !important;
+    margin-bottom: 1rem;
+}
+
+.nb-CodeCell {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.nb-MarkdownCell {
+    padding: 0.5rem 0;
+}
+
+.nb-MarkdownCell h1,
+.nb-MarkdownCell h2,
+.nb-MarkdownCell h3,
+.nb-MarkdownCell h4,
+.nb-MarkdownCell h5,
+.nb-MarkdownCell h6 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.nb-MarkdownCell h1 {
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.nb-CodeInputArea {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.nb-CodeOutputArea {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.nb-CodeOutputArea pre {
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+.nb-CodeOutputArea img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Code highlighting */
+.nb-CodeInputArea pre {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+/* Input/Output prompts */
+.nb-prompt {
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.8rem;
+    color: #666;
+    min-width: 60px;
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+/* Table styling */
+.nb-container table {
+    margin: 1rem 0;
+}
+
+.nb-container table th,
+.nb-container table td {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+.nb-container table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Math expressions */
+.MathJax {
+    font-size: 1rem !important;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <!-- Header -->
+            <div class="mb-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/{{ lang }}/" class="text-decoration-none">{{ translations[lang]['nav_home'] }}</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/{{ lang }}/notebooks" class="text-decoration-none">{{ translations[lang]['notebooks_title'] }}</a>
+                        </li>
+                        <li class="breadcrumb-item active">{{ notebook.title }}</li>
+                    </ol>
+                </nav>
+                
+                <h1 class="display-5 fw-bold mb-3">{{ notebook.title }}</h1>
+                
+                <div class="d-flex flex-wrap align-items-center mb-3">
+                    {% if notebook.date %}
+                    <span class="me-4 text-muted">
+                        <i class="fas fa-calendar-alt me-1"></i>
+                        {{ notebook.date }}
+                    </span>
+                    {% endif %}
+                    <span class="me-4 text-muted">
+                        <i class="fas fa-user me-1"></i>
+                        {{ notebook.author }}
+                    </span>
+                    <span class="badge bg-info">{{ notebook.category }}</span>
+                </div>
+                
+                {% if notebook.tags %}
+                <div class="mb-3">
+                    {% for tag in notebook.tags %}
+                    <span class="badge bg-light text-dark me-1">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                {% if notebook.description %}
+                <p class="lead text-muted">{{ notebook.description }}</p>
+                {% endif %}
+                
+                <!-- Action buttons -->
+                <div class="d-flex gap-2 mb-4">
+                    <a href="/static/notebooks/{{ notebook.filename }}" 
+                       class="btn btn-primary" download>
+                        <i class="fas fa-download me-1"></i>{{ translations[lang]['download_notebook'] }}
+                    </a>
+                    <button class="btn btn-outline-secondary" onclick="window.print()">
+                        <i class="fas fa-print me-1"></i>Print
+                    </button>
+                    <button class="btn btn-outline-secondary" onclick="toggleCodeCells()">
+                        <i class="fas fa-code me-1"></i>Toggle Code
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notebook Content -->
+            <div class="nb-container">
+                {{ notebook_html | safe }}
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="mt-5 pt-4 border-top">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="/{{ lang }}/notebooks" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-1"></i>Back to Notebooks
+                        </a>
+                    </div>
+                    <div class="col-6 text-end">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-share me-1"></i>Share
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="https://twitter.com/intent/tweet?text={{ notebook.title }}&url={{ request.url }}" target="_blank">
+                                        <i class="fab fa-twitter me-2"></i>Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url }}" target="_blank">
+                                        <i class="fab fa-linkedin me-2"></i>LinkedIn
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="mailto:?subject={{ notebook.title }}&body=Check out this notebook: {{ request.url }}">
+                                        <i class="fas fa-envelope me-2"></i>Email
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-3">
+            <div class="sticky-top" style="top: 100px;">
+                <!-- Navigation -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6 class="mb-0">
+                            <i class="fas fa-list me-2"></i>Table of Contents
+                        </h6>
+                    </div>
+                    <div class="card-body" id="notebook-toc">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Quick Info -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6 class="mb-0">
+                            <i class="fas fa-info-circle me-2"></i>Notebook Info
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="small">
+                            <div class="mb-2">
+                                <strong>Author:</strong> {{ notebook.author }}
+                            </div>
+                            {% if notebook.date %}
+                            <div class="mb-2">
+                                <strong>Date:</strong> {{ notebook.date }}
+                            </div>
+                            {% endif %}
+                            <div class="mb-2">
+                                <strong>Category:</strong> {{ notebook.category }}
+                            </div>
+                            <div>
+                                <strong>Format:</strong> Jupyter Notebook
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Requirements -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">
+                            <i class="fas fa-cog me-2"></i>Requirements
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <small class="text-muted">
+                            To run this notebook, you'll need:
+                            <ul class="mt-2 mb-0">
+                                <li>Python 3.7+</li>
+                                <li>Jupyter</li>
+                                <li>NumPy, Pandas</li>
+                                <li>Matplotlib, Seaborn</li>
+                                <li>SciPy</li>
+                            </ul>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>
+// Initialize MathJax
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Highlight code blocks
+    hljs.highlightAll();
+    
+    // Generate table of contents from notebook headers
+    generateNotebookTOC();
+    
+    // Setup code cell visibility toggle
+    setupCodeToggle();
+});
+
+function generateNotebookTOC() {
+    const content = document.querySelector('.nb-container');
+    const toc = document.getElementById('notebook-toc');
+    const headers = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    
+    if (headers.length > 0) {
+        let tocHTML = '<ul class="list-unstyled">';
+        headers.forEach((header, index) => {
+            const id = `header-${index}`;
+            header.id = id;
+            const level = parseInt(header.tagName.charAt(1));
+            const indent = level > 1 ? 'ms-' + ((level-1) * 2) : '';
+            tocHTML += `<li class="${indent} mb-1">
+                <a href="#${id}" class="text-decoration-none small">${header.textContent}</a>
+            </li>`;
+        });
+        tocHTML += '</ul>';
+        toc.innerHTML = tocHTML;
+        
+        // Add smooth scrolling
+        toc.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    } else {
+        toc.innerHTML = '<p class="text-muted small">No headers found</p>';
+    }
+}
+
+function setupCodeToggle() {
+    // Add toggle functionality for code cells
+    window.toggleCodeCells = function() {
+        const codeCells = document.querySelectorAll('.nb-CodeCell');
+        const isHidden = codeCells[0] && codeCells[0].style.display === 'none';
+        
+        codeCells.forEach(cell => {
+            cell.style.display = isHidden ? 'block' : 'none';
+        });
+        
+        // Update button text
+        const toggleBtn = document.querySelector('button[onclick="toggleCodeCells()"]');
+        if (toggleBtn) {
+            const icon = toggleBtn.querySelector('i');
+            const text = isHidden ? 'Hide Code' : 'Show Code';
+            toggleBtn.innerHTML = `<i class="fas fa-code me-1"></i>${text}`;
+        }
+    };
+}
+
+// Copy code functionality
+document.addEventListener('click', function(e) {
+    if (e.target.matches('.copy-code-btn')) {
+        const codeBlock = e.target.parentNode.querySelector('code');
+        if (codeBlock) {
+            copyToClipboard(codeBlock.textContent);
+            e.target.innerHTML = '<i class="fas fa-check text-success"></i>';
+            setTimeout(() => {
+                e.target.innerHTML = '<i class="fas fa-copy"></i>';
+            }, 2000);
+        }
+    }
+});
+
+// Add copy buttons to code blocks
+document.querySelectorAll('pre code').forEach(block => {
+    const button = document.createElement('button');
+    button.className = 'btn btn-sm btn-outline-secondary copy-code-btn';
+    button.innerHTML = '<i class="fas fa-copy"></i>';
+    button.style.position = 'absolute';
+    button.style.top = '5px';
+    button.style.right = '5px';
+    button.style.zIndex = '10';
+    
+    const pre = block.parentNode;
+    pre.style.position = 'relative';
+    pre.appendChild(button);
+});
+</script>
+{% endblock %}

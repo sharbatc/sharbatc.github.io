@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ translations[lang]['site_title'] }}{% endblock %}</title>
+    
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='css/main.css') }}" rel="stylesheet">
+    
+    <!-- Meta tags -->
+    <meta name="description" content="{% block description %}{{ translations[lang]['site_description'] }}{% endblock %}">
+    <meta name="author" content="Sharbatanu Chatterjee">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:title" content="{% block og_title %}{{ translations[lang]['site_title'] }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ translations[lang]['site_description'] }}{% endblock %}">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request.url }}">
+    <meta property="twitter:title" content="{% block twitter_title %}{{ translations[lang]['site_title'] }}{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}{{ translations[lang]['site_description'] }}{% endblock %}">
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/{{ lang }}/">
+                <i class="fas fa-brain me-2"></i>
+                {{ translations[lang]['name'] }}
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'home' %}active{% endif %}" href="/{{ lang }}/">
+                            <i class="fas fa-home me-1"></i>{{ translations[lang]['nav_home'] }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'blog' %}active{% endif %}" href="/{{ lang }}/blog">
+                            <i class="fas fa-blog me-1"></i>{{ translations[lang]['nav_blog'] }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'news' %}active{% endif %}" href="/{{ lang }}/news">
+                            <i class="fas fa-newspaper me-1"></i>{{ translations[lang]['nav_news'] }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'publications' %}active{% endif %}" href="/{{ lang }}/publications">
+                            <i class="fas fa-graduation-cap me-1"></i>{{ translations[lang]['nav_publications'] }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'notebooks' %}active{% endif %}" href="/{{ lang }}/notebooks">
+                            <i class="fas fa-book me-1"></i>{{ translations[lang]['nav_notebooks'] }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'talks' %}active{% endif %}" href="/{{ lang }}/talks">
+                            <i class="fas fa-microphone me-1"></i>{{ translations[lang]['nav_talks'] }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'teaching' %}active{% endif %}" href="/{{ lang }}/teaching">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>{{ translations[lang]['nav_teaching'] }}
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Language Switcher -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe me-1"></i>
+                        {% if lang == 'en' %}English
+                        {% elif lang == 'fr' %}Français
+                        {% elif lang == 'bn' %}বাংলা
+                        {% endif %}
+                    </button>
+                    <ul class="dropdown-menu">
+                        {% for language in available_languages %}
+                        <li>
+                            <a class="dropdown-item {% if language == lang %}active{% endif %}" 
+                               href="{{ get_language_switch_url(request.url.path, lang, language) }}">
+                                {% if language == 'en' %}<i class="flag-icon flag-icon-us me-2"></i>English
+                                {% elif language == 'fr' %}<i class="flag-icon flag-icon-fr me-2"></i>Français
+                                {% elif language == 'bn' %}<i class="flag-icon flag-icon-bd me-2"></i>বাংলা
+                                {% endif %}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <button class="theme-toggle btn btn-outline-light ms-2" type="button" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Sharbatanu Chatterjee. {{ translations[lang]['footer_rights'] }}</p>
+                </div>
+                <div class="col-md-6 text-end footer-icons">
+                    <a href="mailto:sharbatan.chatterjee@cnrs.fr" class="text-light me-3">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://twitter.com/sharbat_c" class="text-light me-3">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/sharbatc" class="text-light me-3">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" class="text-light">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', path='js/main.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
