@@ -1,21 +1,63 @@
 // Academic Website JavaScript
 
-// Theme Management
+// Theme Management with improved cross-browser support
+let currentTheme = 'dark'; // Default theme
+
 function initializeTheme() {
-    // Check for saved theme preference or default to 'dark'
-    // User preference: default site theme should be dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+    // Check for saved theme preference with fallback
+    try {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+            currentTheme = savedTheme;
+        } else {
+            // Default to dark theme
+            currentTheme = 'dark';
+            localStorage.setItem('theme', currentTheme);
+        }
+    } catch (e) {
+        // LocalStorage might not be available, use default
+        currentTheme = 'dark';
+    }
+    
+    applyTheme(currentTheme);
+    updateThemeIcon(currentTheme);
 }
 
 function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
     
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
+    try {
+        localStorage.setItem('theme', currentTheme);
+    } catch (e) {
+        // LocalStorage might not be available, continue anyway
+        console.log('Could not save theme preference');
+    }
+    
+    applyTheme(currentTheme);
+    updateThemeIcon(currentTheme);
+}
+
+function applyTheme(theme) {
+    const html = document.documentElement;
+    const body = document.body;
+    
+    // Remove any existing theme classes
+    html.classList.remove('light-theme', 'dark-theme');
+    body.classList.remove('light-theme', 'dark-theme');
+    
+    // Remove data attribute
+    html.removeAttribute('data-theme');
+    
+    // Apply new theme
+    if (theme === 'light') {
+        html.classList.add('light-theme');
+        body.classList.add('light-theme');
+        html.setAttribute('data-theme', 'light');
+    } else {
+        html.classList.add('dark-theme');
+        body.classList.add('dark-theme'); 
+        html.setAttribute('data-theme', 'dark');
+    }
 }
 
 function updateThemeIcon(theme) {
@@ -75,13 +117,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Theme toggle button - ensure it works on mobile
+    // Theme toggle button - ensure it works on mobile and all browsers
     const themeToggleBtn = document.querySelector('.theme-toggle');
     if (themeToggleBtn) {
-        // Add touch-friendly behavior
-        themeToggleBtn.addEventListener('touchstart', function(e) {
+        // Remove any existing event listeners
+        themeToggleBtn.onclick = null;
+        
+        // Add multiple event types for better compatibility
+        themeToggleBtn.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             toggleTheme();
+        });
+        
+        // Add touch support for mobile
+        themeToggleBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleTheme();
+        });
+        
+        // Add keyboard support
+        themeToggleBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
         });
     }
     

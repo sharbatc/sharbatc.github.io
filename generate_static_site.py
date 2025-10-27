@@ -231,6 +231,29 @@ class StaticSiteGenerator:
         except Exception as e:
             print(f"⚠️  Could not discover teaching items: {e}")
     
+    def discover_news(self):
+        """Discover individual news items and add them to pages list"""
+        try:
+            from pathlib import Path
+            
+            # Find all news files
+            news_dir = Path("content/news")
+            if news_dir.exists():
+                news_files = list(news_dir.glob("*.md"))
+                
+                languages = ['en', 'fr', 'bn']
+                for news_file in news_files:
+                    slug = news_file.stem  # filename without .md extension
+                    for lang in languages:
+                        news_url = f"/{lang}/news/{slug}"
+                        if news_url not in self.pages:
+                            self.pages.append(news_url)
+                
+                print(f"✅ Discovered {len(news_files)} news items for {len(languages)} languages")
+                            
+        except Exception as e:
+            print(f"⚠️  Could not discover news items: {e}")
+
     def discover_notebooks(self):
         """Discover individual notebooks and add them to pages list"""
         try:
@@ -303,6 +326,7 @@ class StaticSiteGenerator:
             self.discover_publications()
             self.discover_talks()
             self.discover_teaching()
+            self.discover_news()
             self.discover_notebooks()
             
             # Step 5: Generate all pages
