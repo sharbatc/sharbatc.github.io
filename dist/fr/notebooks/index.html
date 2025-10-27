@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebooks Jupyter - Sharbatanu Chatterjee - Neuroscientifique &amp; Chercheur</title>
+    
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="http://localhost:8000/static/css/main.css" rel="stylesheet">
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Chercheur postdoctoral en neurosciences, étudiant les relations cerveau-comportement via des modèles de poisson-zèbre">
+    <meta name="author" content="Sharbatanu Chatterjee">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/fr/notebooks">
+    <meta property="og:title" content="Sharbatanu Chatterjee - Neuroscientifique &amp; Chercheur">
+    <meta property="og:description" content="Chercheur postdoctoral en neurosciences, étudiant les relations cerveau-comportement via des modèles de poisson-zèbre">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:8000/fr/notebooks">
+    <meta property="twitter:title" content="Sharbatanu Chatterjee - Neuroscientifique &amp; Chercheur">
+    <meta property="twitter:description" content="Chercheur postdoctoral en neurosciences, étudiant les relations cerveau-comportement via des modèles de poisson-zèbre">
+    
+    
+<!-- Jupyter notebook styling -->
+<style>
+.notebook-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notebook-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.notebook-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.notebook-meta {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+</style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/fr/">
+                <i class="fas fa-brain me-2"></i>
+                Sharbatanu Chatterjee
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/fr/">
+                            <i class="fas fa-home me-1"></i>Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/fr/blog">
+                            <i class="fas fa-blog me-1"></i>Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/fr/news">
+                            <i class="fas fa-newspaper me-1"></i>Actualités
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/fr/publications">
+                            <i class="fas fa-graduation-cap me-1"></i>Publications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/fr/notebooks">
+                            <i class="fas fa-book me-1"></i>Notebooks
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/fr/talks">
+                            <i class="fas fa-microphone me-1"></i>Conférences
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/fr/teaching">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>Enseignement
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Language Switcher -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe me-1"></i>
+                        Français
+                        
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        <li>
+                            <a class="dropdown-item " 
+                               href="/en/notebooks">
+                                <i class="flag-icon flag-icon-us me-2"></i>English
+                                
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item active" 
+                               href="/fr/notebooks">
+                                <i class="flag-icon flag-icon-fr me-2"></i>Français
+                                
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item " 
+                               href="/bn/notebooks">
+                                <i class="flag-icon flag-icon-bd me-2"></i>বাংলা
+                                
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <button class="theme-toggle btn btn-outline-light ms-2" type="button" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+<div class="container-fluid px-0">
+    <!-- Hero Section -->
+    <section class="hero-section py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 mb-3 fw-bold">Notebooks Jupyter</h1>
+                    <p class="lead mb-4">Recherche et analyse interactives</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- About Notebooks Section -->
+        <div class="row mb-5 pb-4 border-bottom">
+            <div class="col-lg-8 mx-auto">
+                <h3 class="mb-3">About These Notebooks</h3>
+                <p class="text-muted">
+                    These Jupyter notebooks contain interactive analyses from my research, teaching, and leisure. 
+                    Each notebook demonstrates different aspects of data analysis, from behavioral experiments 
+                    to neural imaging, to visualization. You can view them here or download them to run 
+                    interactively on your own system.
+                </p>
+                
+                <h4 class="mt-4 mb-3">Categories</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start mb-3">
+                            <span class="badge bg-info me-3 mt-1">research</span>
+                            <div>
+                                <h6 class="mb-1">Research Analysis</h6>
+                                <small class="text-muted">Core experimental data analysis from my work.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start mb-3">
+                            <span class="badge bg-success me-3 mt-1">tutorial</span>
+                            <div>
+                                <h6 class="mb-1">Tutorials</h6>
+                                <small class="text-muted">Educational notebooks explaining analysis techniques</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start mb-3">
+                            <span class="badge bg-warning me-3 mt-1">visualization</span>
+                            <div>
+                                <h6 class="mb-1">Data Visualization</h6>
+                                <small class="text-muted">Interactive plots and visualization techniques</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start mb-3">
+                            <span class="badge bg-secondary me-3 mt-1">methods</span>
+                            <div>
+                                <h6 class="mb-1">Methods</h6>
+                                <small class="text-muted">Computational methods and algorithm implementations</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Running the Notebooks</h5>
+                    <p class="text-muted">
+                        To run these notebooks locally, you'll need Python with Jupyter and the required packages. 
+                        Most notebooks include installation instructions at the beginning.
+                    </p>
+                    <pre class="bg-light p-3 rounded"><code>pip install jupyter numpy pandas matplotlib seaborn scipy</code></pre>
+                </div>
+            </div>
+        </div>
+
+        
+    <!-- Empty State -->
+    <div class="text-center py-5">
+        <i class="fas fa-book fa-3x text-muted mb-3"></i>
+        <h3 class="text-muted">No notebooks available</h3>
+        <p class="text-muted">Check back soon for interactive analysis notebooks!</p>
+    </div>
+    
+
+
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Sharbatanu Chatterjee. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-end footer-icons">
+                    <a href="mailto:sharbatan.chatterjee@cnrs.fr" class="text-light me-3">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://twitter.com/sharbat_c" class="text-light me-3">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/sharbatc" class="text-light me-3">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" class="text-light">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://localhost:8000/static/js/main.js"></script>
+    
+</body>
+</html>

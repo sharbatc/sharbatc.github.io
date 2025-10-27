@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Analysis Notebook - Sharbatanu Chatterjee - Neuroscientist &amp; Researcher</title>
+    
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="http://localhost:8000/static/css/main.css" rel="stylesheet">
+    
+    <!-- Meta tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Sharbatanu Chatterjee">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/en/notebooks/test-analysis">
+    <meta property="og:title" content="Sharbatanu Chatterjee - Neuroscientist &amp; Researcher">
+    <meta property="og:description" content="Postdoctoral researcher in neuroscience, studying brain-behavior relationships through zebrafish models">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:8000/en/notebooks/test-analysis">
+    <meta property="twitter:title" content="Sharbatanu Chatterjee - Neuroscientist &amp; Researcher">
+    <meta property="twitter:description" content="Postdoctoral researcher in neuroscience, studying brain-behavior relationships through zebrafish models">
+    
+    
+<!-- Jupyter notebook styling -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+<style>
+/* Jupyter notebook specific styles */
+.nb-container {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.nb-Cell {
+    border: none !important;
+    margin-bottom: 1rem;
+}
+
+.nb-CodeCell {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.nb-MarkdownCell {
+    padding: 0.5rem 0;
+}
+
+.nb-MarkdownCell h1,
+.nb-MarkdownCell h2,
+.nb-MarkdownCell h3,
+.nb-MarkdownCell h4,
+.nb-MarkdownCell h5,
+.nb-MarkdownCell h6 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.nb-MarkdownCell h1 {
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.nb-CodeInputArea {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.nb-CodeOutputArea {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.nb-CodeOutputArea pre {
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+.nb-CodeOutputArea img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Code highlighting */
+.nb-CodeInputArea pre {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+/* Input/Output prompts */
+.nb-prompt {
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.8rem;
+    color: #666;
+    min-width: 60px;
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+/* Table styling */
+.nb-container table {
+    margin: 1rem 0;
+}
+
+.nb-container table th,
+.nb-container table td {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+.nb-container table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Math expressions */
+.MathJax {
+    font-size: 1rem !important;
+}
+</style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/en/">
+                <i class="fas fa-brain me-2"></i>
+                Sharbatanu Chatterjee
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/en/">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/en/blog">
+                            <i class="fas fa-blog me-1"></i>Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/en/news">
+                            <i class="fas fa-newspaper me-1"></i>News
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/en/publications">
+                            <i class="fas fa-graduation-cap me-1"></i>Publications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/en/notebooks">
+                            <i class="fas fa-book me-1"></i>Notebooks
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/en/talks">
+                            <i class="fas fa-microphone me-1"></i>Talks
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/en/teaching">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>Teaching
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Language Switcher -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe me-1"></i>
+                        English
+                        
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        <li>
+                            <a class="dropdown-item active" 
+                               href="/en/notebooks/test-analysis">
+                                <i class="flag-icon flag-icon-us me-2"></i>English
+                                
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item " 
+                               href="/fr/notebooks/test-analysis">
+                                <i class="flag-icon flag-icon-fr me-2"></i>Français
+                                
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item " 
+                               href="/bn/notebooks/test-analysis">
+                                <i class="flag-icon flag-icon-bd me-2"></i>বাংলা
+                                
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <button class="theme-toggle btn btn-outline-light ms-2" type="button" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+<div class="container-fluid py-4">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <!-- Header -->
+            <div class="mb-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/en/" class="text-decoration-none">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/en/notebooks" class="text-decoration-none">Jupyter Notebooks</a>
+                        </li>
+                        <li class="breadcrumb-item active">Test Analysis Notebook</li>
+                    </ol>
+                </nav>
+                
+                <h1 class="display-5 fw-bold mb-3">Test Analysis Notebook</h1>
+                
+                <div class="d-flex flex-wrap align-items-center mb-3">
+                    
+                    <span class="me-4 text-muted">
+                        <i class="fas fa-user me-1"></i>
+                        Sharbatanu Chatterjee
+                    </span>
+                    <span class="badge bg-info">analysis</span>
+                </div>
+                
+                
+                
+                
+                
+                <!-- Action buttons -->
+                <div class="d-flex gap-2 mb-4">
+                    <a href="/static/notebooks/test-analysis.ipynb" 
+                       class="btn btn-primary" download>
+                        <i class="fas fa-download me-1"></i>Download
+                    </a>
+                    <button class="btn btn-outline-secondary" onclick="window.print()">
+                        <i class="fas fa-print me-1"></i>Print
+                    </button>
+                    <button class="btn btn-outline-secondary" onclick="toggleCodeCells()">
+                        <i class="fas fa-code me-1"></i>Toggle Code
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notebook Content -->
+            <div class="nb-container">
+                <div class="notebook-content manual-conversion"><div class="cell markdown-cell"><h1>Test Analysis Notebook</h1>
+<p>This is a simple test notebook to demonstrate the notebook viewing functionality.</p>
+<p><strong>Author:</strong> Sharbatanu Chatterjee<br />
+<strong>Date:</strong> October 2024<br />
+<strong>Category:</strong> Tutorial  </p></div><div class="cell markdown-cell"><h2>Introduction</h2>
+<p>This notebook contains some basic examples of data analysis and visualization using Python. It serves as a template for more complex analyses.</p></div>
+                    <div class="cell code-cell">
+                        <div class="input">
+                            <pre><code class="language-python"># Import required libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+print("Libraries imported successfully!")</code></pre>
+                        </div>
+                    <div class="output"><pre class="output-text">Libraries imported successfully!
+</pre></div></div><div class="cell markdown-cell"><h2>Data Generation</h2>
+<p>Let's create some sample data for analysis:</p></div>
+                    <div class="cell code-cell">
+                        <div class="input">
+                            <pre><code class="language-python"># Generate sample data
+np.random.seed(42)
+n_samples = 100
+
+data = {
+    'x': np.random.normal(0, 1, n_samples),
+    'y': np.random.normal(0, 1, n_samples),
+    'category': np.random.choice(['A', 'B', 'C'], n_samples)
+}
+
+df = pd.DataFrame(data)
+df['z'] = df['x'] * 0.5 + df['y'] * 0.3 + np.random.normal(0, 0.2, n_samples)
+
+print(f"Generated dataset with {len(df)} samples")
+print(df.head())</code></pre>
+                        </div>
+                    <div class="output"><pre class="output-text">Generated dataset with 100 samples
+          x         y category         z
+0  0.496714 -1.415371        B -0.244131
+1 -0.138264 -0.420645        B -0.358380
+2  0.647689 -0.342715        A  0.360848
+3  1.523030 -0.802277        A  0.640811
+4 -0.234153 -0.161286        A -0.261712
+</pre></div></div><div class="cell markdown-cell"><h2>Data Visualization</h2>
+<p>Now let's create some visualizations:</p></div>
+                    <div class="cell code-cell">
+                        <div class="input">
+                            <pre><code class="language-python"># Create a scatter plot
+plt.figure(figsize=(10, 6))
+
+plt.subplot(1, 2, 1)
+sns.scatterplot(data=df, x='x', y='y', hue='category', alpha=0.7)
+plt.title('Scatter Plot by Category')
+plt.grid(True, alpha=0.3)
+
+plt.subplot(1, 2, 2)
+sns.histplot(data=df, x='z', bins=20, alpha=0.7)
+plt.title('Distribution of Z values')
+plt.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()</code></pre>
+                        </div>
+                    <div class="output"><pre class="output-result"><Figure size 1000x600 with 2 Axes></pre></div></div><div class="cell markdown-cell"><h2>Statistical Analysis</h2>
+<p>Let's perform some basic statistical analysis:</p></div>
+                    <div class="cell code-cell">
+                        <div class="input">
+                            <pre><code class="language-python"># Calculate correlations
+correlations = df[['x', 'y', 'z']].corr()
+print("Correlation matrix:")
+print(correlations)
+
+# Group statistics by category
+print("\nStatistics by category:")
+summary_stats = df.groupby('category').agg({
+    'x': ['mean', 'std'],
+    'y': ['mean', 'std'],
+    'z': ['mean', 'std']
+}).round(3)
+
+print(summary_stats)</code></pre>
+                        </div>
+                    <div class="output"><pre class="output-text">Correlation matrix:
+          x         y         z
+x  1.000000 -0.136422  0.810754
+y -0.136422  1.000000  0.337631
+z  0.810754  0.337631  1.000000
+
+Statistics by category:
+              x             y             z       
+           mean    std   mean    std   mean    std
+category                                          
+A        -0.028  0.861 -0.045  0.805  0.009  0.490
+B        -0.236  0.873  0.024  1.068 -0.126  0.551
+C        -0.024  1.008  0.094  0.982  0.021  0.597
+</pre></div></div><div class="cell markdown-cell"><h2>Conclusion</h2>
+<p>This notebook demonstrated:</p>
+<ol>
+<li><strong>Data Generation</strong>: Creating synthetic datasets for analysis</li>
+<li><strong>Visualization</strong>: Using matplotlib and seaborn for plots</li>
+<li><strong>Statistical Analysis</strong>: Computing correlations and group statistics</li>
+</ol>
+<p>This serves as a template that can be extended for more complex analyses in neuroscience research.</p></div></div>
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="mt-5 pt-4 border-top">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="/en/notebooks" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-1"></i>Back to Notebooks
+                        </a>
+                    </div>
+                    <div class="col-6 text-end">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-share me-1"></i>Share
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="https://twitter.com/intent/tweet?text=Test Analysis Notebook&url=http://localhost:8000/en/notebooks/test-analysis" target="_blank">
+                                        <i class="fab fa-twitter me-2"></i>Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=http://localhost:8000/en/notebooks/test-analysis" target="_blank">
+                                        <i class="fab fa-linkedin me-2"></i>LinkedIn
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="mailto:?subject=Test Analysis Notebook&body=Check out this notebook: http://localhost:8000/en/notebooks/test-analysis">
+                                        <i class="fas fa-envelope me-2"></i>Email
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-3">
+            <div class="sticky-top" style="top: 100px;">
+                <!-- Navigation -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6 class="mb-0">
+                            <i class="fas fa-list me-2"></i>Table of Contents
+                        </h6>
+                    </div>
+                    <div class="card-body" id="notebook-toc">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Quick Info -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6 class="mb-0">
+                            <i class="fas fa-info-circle me-2"></i>Notebook Info
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="small">
+                            <div class="mb-2">
+                                <strong>Author:</strong> Sharbatanu Chatterjee
+                            </div>
+                            
+                            <div class="mb-2">
+                                <strong>Category:</strong> analysis
+                            </div>
+                            <div>
+                                <strong>Format:</strong> Jupyter Notebook
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Requirements -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">
+                            <i class="fas fa-cog me-2"></i>Requirements
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <small class="text-muted">
+                            To run this notebook, you'll need:
+                            <ul class="mt-2 mb-0">
+                                <li>Python 3.7+</li>
+                                <li>Jupyter</li>
+                                <li>NumPy, Pandas</li>
+                                <li>Matplotlib, Seaborn</li>
+                                <li>SciPy</li>
+                            </ul>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Sharbatanu Chatterjee. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end footer-icons">
+                    <a href="mailto:sharbatan.chatterjee@cnrs.fr" class="text-light me-3">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://twitter.com/sharbat_c" class="text-light me-3">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/sharbatc" class="text-light me-3">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" class="text-light">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://localhost:8000/static/js/main.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>
+// Initialize MathJax
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Highlight code blocks
+    hljs.highlightAll();
+    
+    // Generate table of contents from notebook headers
+    generateNotebookTOC();
+    
+    // Setup code cell visibility toggle
+    setupCodeToggle();
+});
+
+function generateNotebookTOC() {
+    const content = document.querySelector('.nb-container');
+    const toc = document.getElementById('notebook-toc');
+    const headers = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    
+    if (headers.length > 0) {
+        let tocHTML = '<ul class="list-unstyled">';
+        headers.forEach((header, index) => {
+            const id = `header-${index}`;
+            header.id = id;
+            const level = parseInt(header.tagName.charAt(1));
+            const indent = level > 1 ? 'ms-' + ((level-1) * 2) : '';
+            tocHTML += `<li class="${indent} mb-1">
+                <a href="#${id}" class="text-decoration-none small">${header.textContent}</a>
+            </li>`;
+        });
+        tocHTML += '</ul>';
+        toc.innerHTML = tocHTML;
+        
+        // Add smooth scrolling
+        toc.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    } else {
+        toc.innerHTML = '<p class="text-muted small">No headers found</p>';
+    }
+}
+
+function setupCodeToggle() {
+    // Add toggle functionality for code cells
+    window.toggleCodeCells = function() {
+        const codeCells = document.querySelectorAll('.nb-CodeCell');
+        const isHidden = codeCells[0] && codeCells[0].style.display === 'none';
+        
+        codeCells.forEach(cell => {
+            cell.style.display = isHidden ? 'block' : 'none';
+        });
+        
+        // Update button text
+        const toggleBtn = document.querySelector('button[onclick="toggleCodeCells()"]');
+        if (toggleBtn) {
+            const icon = toggleBtn.querySelector('i');
+            const text = isHidden ? 'Hide Code' : 'Show Code';
+            toggleBtn.innerHTML = `<i class="fas fa-code me-1"></i>${text}`;
+        }
+    };
+}
+
+// Copy code functionality
+document.addEventListener('click', function(e) {
+    if (e.target.matches('.copy-code-btn')) {
+        const codeBlock = e.target.parentNode.querySelector('code');
+        if (codeBlock) {
+            copyToClipboard(codeBlock.textContent);
+            e.target.innerHTML = '<i class="fas fa-check text-success"></i>';
+            setTimeout(() => {
+                e.target.innerHTML = '<i class="fas fa-copy"></i>';
+            }, 2000);
+        }
+    }
+});
+
+// Add copy buttons to code blocks
+document.querySelectorAll('pre code').forEach(block => {
+    const button = document.createElement('button');
+    button.className = 'btn btn-sm btn-outline-secondary copy-code-btn';
+    button.innerHTML = '<i class="fas fa-copy"></i>';
+    button.style.position = 'absolute';
+    button.style.top = '5px';
+    button.style.right = '5px';
+    button.style.zIndex = '10';
+    
+    const pre = block.parentNode;
+    pre.style.position = 'relative';
+    pre.appendChild(button);
+});
+</script>
+
+</body>
+</html>
