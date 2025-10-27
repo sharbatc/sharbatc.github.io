@@ -133,9 +133,18 @@
                 শর্বতনু চ্যাটার্জী
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <!-- Mobile controls: Theme toggle and menu button -->
+            <div class="d-flex align-items-center">
+                <!-- Theme Toggle (always visible) -->
+                <button class="theme-toggle btn btn-outline-light btn-sm me-2" type="button" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                
+                <!-- Mobile menu button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
@@ -178,12 +187,12 @@
                 
                 <!-- Language Switcher -->
                 <div class="dropdown">
-                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-globe me-1"></i>
                         বাংলা
                         
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         
                         <li>
                             <a class="dropdown-item " 
@@ -211,11 +220,6 @@
                         
                     </ul>
                 </div>
-                
-                <!-- Theme Toggle -->
-                <button class="theme-toggle btn btn-outline-light ms-2" type="button" onclick="toggleTheme()">
-                    <i class="fas fa-moon" id="theme-icon"></i>
-                </button>
             </div>
         </div>
     </nav>

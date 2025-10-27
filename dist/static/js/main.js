@@ -36,6 +36,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ensure theme is properly set
     initializeTheme();
     
+    // Mobile navigation improvements
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Close mobile menu when clicking on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+        });
+    });
+    
+    // Improve mobile dropdown behavior
+    const dropdownElements = document.querySelectorAll('.dropdown-toggle');
+    dropdownElements.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            // On mobile, ensure dropdown works properly
+            if (window.innerWidth <= 768) {
+                e.stopPropagation();
+            }
+        });
+    });
+    
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', function() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (window.innerWidth > 768 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false
+            });
+            bsCollapse.hide();
+        }
+    });
+    
+    // Theme toggle button - ensure it works on mobile
+    const themeToggleBtn = document.querySelector('.theme-toggle');
+    if (themeToggleBtn) {
+        // Add touch-friendly behavior
+        themeToggleBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            toggleTheme();
+        });
+    }
+    
     // Add fade-in animation to cards
     const cards = document.querySelectorAll('.card');
     cards.forEach((card, index) => {
@@ -78,26 +127,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navbar scroll effect
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Navbar scroll effect - disabled on mobile for better performance
+    if (window.innerWidth > 768) {
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
         
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            navbar.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollTop = scrollTop;
-    });
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
 
-    // Add transition to navbar
-    navbar.style.transition = 'transform 0.3s ease-in-out';
+        // Add transition to navbar
+        navbar.style.transition = 'transform 0.3s ease-in-out';
+    }
 });
 
 // Utility functions
