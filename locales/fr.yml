@@ -13,6 +13,8 @@ fr:
   nav_publications: "Publications"
   nav_talks: "Conférences"
   nav_teaching: "Enseignement"
+  nav_cv: "CV"
+  nav_contact: "Contactez-moi"
   
   # Home page
   welcome_title: "Bienvenue sur ma page d'accueil !"

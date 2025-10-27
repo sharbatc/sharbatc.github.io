@@ -540,5 +540,41 @@ async def teaching(request: Request, lang: str = DEFAULT_LANGUAGE):
         }
     )
 
+@app.get("/cv", response_class=HTMLResponse)
+@app.get("/{lang}/cv", response_class=HTMLResponse)
+async def cv(request: Request, lang: str = DEFAULT_LANGUAGE):
+    """CV/Resume page"""
+    if lang not in LANGUAGES:
+        raise HTTPException(status_code=404, detail="Language not supported")
+    
+    return templates.TemplateResponse(
+        "cv.html", 
+        {
+            "request": request, 
+            "lang": lang, 
+            "available_languages": LANGUAGES,
+            "page": "cv",
+            "translations": translations
+        }
+    )
+
+@app.get("/contact", response_class=HTMLResponse)
+@app.get("/{lang}/contact", response_class=HTMLResponse)
+async def contact(request: Request, lang: str = DEFAULT_LANGUAGE):
+    """Contact page"""
+    if lang not in LANGUAGES:
+        raise HTTPException(status_code=404, detail="Language not supported")
+    
+    return templates.TemplateResponse(
+        "contact.html", 
+        {
+            "request": request, 
+            "lang": lang, 
+            "available_languages": LANGUAGES,
+            "page": "contact",
+            "translations": translations
+        }
+    )
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
