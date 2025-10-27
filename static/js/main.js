@@ -190,6 +190,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Do not auto-redirect from root based on previously stored language.
     // The site default should be English; users can still switch languages manually.
 
+    // Mobile post info collapse functionality
+    const mobilePostInfoToggle = document.querySelector('[data-bs-target="#mobilePostInfo"]');
+    const mobilePostInfo = document.getElementById('mobilePostInfo');
+    const mobileToggleIcon = document.getElementById('mobile-toggle-icon');
+    
+    if (mobilePostInfoToggle && mobilePostInfo && mobileToggleIcon) {
+        mobilePostInfo.addEventListener('show.bs.collapse', function() {
+            mobileToggleIcon.classList.remove('fa-chevron-down');
+            mobileToggleIcon.classList.add('fa-chevron-up');
+        });
+        
+        mobilePostInfo.addEventListener('hide.bs.collapse', function() {
+            mobileToggleIcon.classList.remove('fa-chevron-up');
+            mobileToggleIcon.classList.add('fa-chevron-down');
+        });
+    }
+    
     // Add loading states to buttons
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {

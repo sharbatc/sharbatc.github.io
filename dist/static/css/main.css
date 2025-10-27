@@ -787,3 +787,30 @@ h6 { font-size: 1rem; }
     font-size: 0.75rem;
     font-weight: 500;
 }
+
+/* Mobile post info toggle */
+.btn-mobile-toggle {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--theme-border);
+    border-radius: 8px;
+    background: var(--theme-bg);
+    color: var(--theme-text);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-mobile-toggle:hover {
+    background: var(--theme-bg-secondary);
+    border-color: var(--secondary-color);
+    color: var(--theme-text);
+}
+
+.btn-mobile-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+.btn-mobile-toggle i {
+    transition: transform 0.2s ease;
+}

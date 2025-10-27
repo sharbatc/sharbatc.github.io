@@ -146,8 +146,16 @@
         <!-- Sidebar -->
         <div class="col-lg-3 col-md-4">
             <div class="sticky-top" style="top: 100px;">
-                <!-- Post Info -->
-                <div class="card mb-4">
+                <!-- Mobile Post Info Toggle Button (only visible on mobile) -->
+                <div class="d-lg-none d-md-none mb-3">
+                    <button class="btn btn-outline-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#mobilePostInfo" aria-expanded="false" aria-controls="mobilePostInfo">
+                        <i class="fas fa-info-circle me-2"></i>Post Info
+                        <i class="fas fa-chevron-down ms-2" id="mobile-toggle-icon"></i>
+                    </button>
+                </div>
+                
+                <!-- Post Info (always visible on desktop, collapsible on mobile) -->
+                <div class="card mb-4 collapse d-lg-block d-md-block" id="mobilePostInfo">
                     <div class="card-header">
                         <h5 class="card-title mb-0">
                             <i class="fas fa-info-circle me-2"></i>Post Info
