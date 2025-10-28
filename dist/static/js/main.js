@@ -139,52 +139,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Theme toggle button - ensure it works on mobile and all browsers
+    // Theme toggle button - improved reliability for mobile
     const themeToggleBtn = document.querySelector('.theme-toggle');
     if (themeToggleBtn) {
         // Remove any existing event listeners and onclick
         themeToggleBtn.onclick = null;
         themeToggleBtn.removeAttribute('onclick');
-        
-        // Use a single event listener that works for both click and touch
+
+        // Use only click and keyboard events to avoid double toggling on mobile
         const handleThemeToggle = function(e) {
             e.preventDefault();
             e.stopPropagation();
-            
             // Add visual feedback
             themeToggleBtn.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 themeToggleBtn.style.transform = 'scale(1)';
             }, 150);
-            
             toggleTheme();
         };
-        
-        // Add click event for desktop and mobile
+
         themeToggleBtn.addEventListener('click', handleThemeToggle, { passive: false });
-        
-        // Add extra touch support for mobile Safari
-        if ('ontouchstart' in window) {
-            themeToggleBtn.addEventListener('touchstart', function(e) {
+        // Keyboard support
+        themeToggleBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-            }, { passive: false });
-            
-            themeToggleBtn.addEventListener('touchend', handleThemeToggle, { passive: false });
-        }
-        
+                handleThemeToggle(e);
+            }
+        });
+
         // Ensure button is properly styled for interaction
         themeToggleBtn.style.cursor = 'pointer';
         themeToggleBtn.style.userSelect = 'none';
         themeToggleBtn.style.webkitUserSelect = 'none';
         themeToggleBtn.style.webkitTapHighlightColor = 'transparent';
-        
-        // Add keyboard support
-        themeToggleBtn.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleTheme();
-            }
-        });
     }
     
     // Add fade-in animation to cards

@@ -876,17 +876,21 @@ h6 { font-size: 1rem; }
     body {
         padding-top: 110px; /* Increased padding for mobile to prevent navbar overlap */
     }
-    
+
     .container.py-5 {
         padding-top: 2.5rem !important; /* Additional top padding for main content containers */
     }
-    
-    /* Ensure headers have enough spacing from navbar */
+
+    /* Ensure headers and first elements have enough spacing from navbar */
+    h1, h2, h3 {
+        margin-top: 1.5rem !important;
+    }
+    .main-content > *:first-child {
+        margin-top: 1.5rem !important;
+    }
     .display-4 {
         margin-top: 1.5rem;
     }
-    
-    /* Additional spacing for page headers */
     header.text-center {
         margin-top: 1rem;
     }
@@ -897,15 +901,20 @@ h6 { font-size: 1rem; }
     body {
         padding-top: 120px; /* Even more padding for small phones */
     }
-    
+
     .container.py-5 {
         padding-top: 3rem !important;
     }
-    
+
+    h1, h2, h3 {
+        margin-top: 2rem !important;
+    }
+    .main-content > *:first-child {
+        margin-top: 2rem !important;
+    }
     .display-4 {
         margin-top: 2rem;
     }
-    
     header.text-center {
         margin-top: 1.5rem;
     }

@@ -1,2 +1,4 @@
+# Ignore backup_jekyll_site directory
+backup_jekyll_site/
 _site/
 
