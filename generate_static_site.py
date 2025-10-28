@@ -130,17 +130,6 @@ class StaticSiteGenerator:
                 file_path.parent.mkdir(parents=True, exist_ok=True)
 
                 html = response.text
-                # Fix main.css href (match any protocol/host)
-                import re
-                html = re.sub(r'<link([^>]+)href=["\\\'](?:https?:)?//[^"\\\']*/static/css/main\\.css["\\\']', r'<link\1href="/static/css/main.css"', html)
-                html = re.sub(r'<link([^>]+)href=["\\\']/static/css/main\\.css["\\\']', r'<link\1href="/static/css/main.css"', html)
-                # Fix main.js src (match any protocol/host)
-                html = re.sub(r'<script([^>]+)src=["\\\'](?:https?:)?//[^"\\\']*/static/js/main\\.js["\\\']', r'<script\1src="/static/js/main.js"', html)
-                html = re.sub(r'<script([^>]+)src=["\\\']/static/js/main\\.js["\\\']', r'<script\1src="/static/js/main.js"', html)
-                # Fix og:url and twitter:url meta tags
-                html = re.sub(r'(<meta[^>]+property=["\\\']og:url["\\\'][^>]+content=)["\\\'][^"\\\']*["\\\']', r'\1"' + self.production_url + '"', html)
-                html = re.sub(r'(<meta[^>]+property=["\\\']twitter:url["\\\'][^>]+content=)["\\\'][^"\\\']*["\\\']', r'\1"' + self.production_url + '"', html)
-
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(html)
                 print(f"✅ Generated: {page_path} -> {file_path}")
