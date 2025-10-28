@@ -23,7 +23,7 @@
                         <div class="col-md-9">
                             <h4><a href="/{{ lang }}/publications/{{ publication.slug }}" class="text-decoration-none">{{ publication.title }}</a></h4>
                             <p class="text-muted">{{ publication.journal }} • {{ publication.status }}</p>
-                            <p>{{ publication.description }}</p>
+                            <p>{{ publication.description | safe }}</p>
                             {% if publication.tags %}
                             <div class="mb-2">
                                 {% for tag in publication.tags %}

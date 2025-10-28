@@ -3,77 +3,63 @@
 {% block title %}{{ publication.title }} - {{ translations[lang]['site_title'] }}{% endblock %}
 
 {% block content %}
-<div class="container-fluid px-0">
-    <!-- Publication Header -->
-    <section class="publication-header py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center">
-                    <div class="publication-meta mb-3">
-                        <span class="badge bg-light text-dark me-2">{{ publication.year }}</span>
-                        {% if publication.journal %}
-                        <span class="badge bg-light text-dark me-2">{{ publication.journal }}</span>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Page Header -->
+            <header class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-4">{{ publication.title }}</h1>
+                {% if publication.authors %}
+                <p class="lead mb-4">
+                    {% for author in publication.authors %}
+                        {% if author == "Sharbatanu Chatterjee" %}
+                            <strong>{{ author }}</strong>
+                        {% else %}
+                            {{ author }}
                         {% endif %}
-                        {% if publication.status %}
-                        <span class="badge bg-warning text-dark">{{ publication.status }}</span>
-                        {% endif %}
-                    </div>
-                    <h1 class="display-5 fw-bold mb-4">{{ publication.title }}</h1>
-                    {% if publication.authors %}
-                    <p class="lead mb-4">
-                        {% for author in publication.authors %}
-                            {% if author == "Sharbatanu Chatterjee" %}
-                                <strong>{{ author }}</strong>
-                            {% else %}
-                                {{ author }}
-                            {% endif %}
-                            {% if not loop.last %}, {% endif %}
-                        {% endfor %}
-                    </p>
+                        {% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                {% endif %}
+                
+                <div class="publication-actions mb-4">
+                    {% if publication.pdf_url %}
+                    <a href="{{ publication.pdf_url }}" 
+                       class="btn btn-primary btn-lg me-3" 
+                       target="_blank">
+                        <i class="fas fa-file-pdf me-2"></i>Download PDF
+                    </a>
                     {% endif %}
-                    
-                    <div class="publication-actions">
-                        {% if publication.pdf_url %}
-                        <a href="{{ publication.pdf_url }}" 
-                           class="btn btn-light btn-lg me-3" 
-                           target="_blank">
-                            <i class="fas fa-file-pdf me-2"></i>Download PDF
-                        </a>
-                        {% endif %}
-                        {% if publication.doi %}
-                        <a href="https://doi.org/{{ publication.doi }}" 
-                           class="btn btn-outline-light btn-lg me-3" 
-                           target="_blank">
-                            <i class="fas fa-external-link-alt me-2"></i>View on Publisher
-                        </a>
-                        {% endif %}
-                        {% if publication.code_url %}
-                        <a href="{{ publication.code_url }}" 
-                           class="btn btn-outline-light btn-lg" 
-                           target="_blank">
-                            <i class="fas fa-code me-2"></i>View Code
-                        </a>
-                        {% endif %}
-                    </div>
+                    {% if publication.doi %}
+                    <a href="https://doi.org/{{ publication.doi }}" 
+                       class="btn btn-outline-primary btn-lg me-3" 
+                       target="_blank">
+                        <i class="fas fa-external-link-alt me-2"></i>View on Publisher
+                    </a>
+                    {% endif %}
+                    {% if publication.code_url %}
+                    <a href="{{ publication.code_url }}" 
+                       class="btn btn-outline-primary btn-lg" 
+                       target="_blank">
+                        <i class="fas fa-code me-2"></i>View Code
+                    </a>
+                    {% endif %}
                 </div>
-            </div>
-        </div>
-    </section>
+            </header>
 
-    <!-- Main Content -->
-    <div class="container my-5">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-lg-3 col-md-4">
-                <!-- Publication Info -->
-                <div class="card shadow-sm mb-4">
-                    <div class="card-header bg-light">
-                        <h5 class="card-title mb-0">
-                            <i class="fas fa-info-circle me-2"></i>Publication Details
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row g-3">
+            <!-- Main Content -->
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3 col-md-4">
+                    <!-- Publication Info -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-light">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-info-circle me-2"></i>Publication Details
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
                             {% if publication.year %}
                             <div class="col-12">
                                 <small class="text-muted d-block">Publication Year</small>

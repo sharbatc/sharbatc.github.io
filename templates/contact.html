@@ -9,9 +9,9 @@
             <!-- Page Header -->
             <header class="text-center mb-5">
                 <h1 class="display-4 fw-bold mb-3">
-                    <i class="fas fa-envelope me-3"></i>Contact Me
+                    <i class="fas fa-envelope me-3"></i>{{ translations[lang]['contact_title'] }}
                 </h1>
-                <p class="lead">Get in touch - I'd love to hear from you!</p>
+                <p class="lead">{{ translations[lang]['contact_subtitle'] }}</p>
             </header>
 
             <!-- Contact Information -->
@@ -20,8 +20,8 @@
                     <div class="card h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
-                            <h4>Professional Email</h4>
-                            <p class="mb-2">For academic inquiries and collaboration</p>
+                            <h4>{{ translations[lang]['contact_professional'] }}</h4>
+                            <p class="mb-2">{{ translations[lang]['contact_academic'] }}</p>
                             <a href="mailto:sharbatanu.chatterjee@cnrs.fr" class="btn btn-outline-primary">
                                 sharbatanu.chatterjee@cnrs.fr
                             </a>
@@ -32,8 +32,8 @@
                     <div class="card h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-at fa-3x text-secondary mb-3"></i>
-                            <h4>Personal Email</h4>
-                            <p class="mb-2">For general inquiries and networking</p>
+                            <h4>{{ translations[lang]['contact_personal'] }}</h4>
+                            <p class="mb-2">{{ translations[lang]['contact_general'] }}</p>
                             <a href="mailto:sharbatanu@gmail.com" class="btn btn-outline-secondary">
                                 sharbatanu@gmail.com
                             </a>
@@ -44,7 +44,7 @@
 
             <!-- Social Media Links -->
             <section class="mb-5">
-                <h3 class="text-center mb-4">Connect on Social Media</h3>
+                <h3 class="text-center mb-4">{{ translations[lang]['contact_social'] }}</h3>
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="d-flex justify-content-center flex-wrap gap-3">
@@ -54,11 +54,11 @@
                             <a href="https://linkedin.com/in/sharbatanu-chatterjee" class="btn btn-outline-primary" target="_blank">
                                 <i class="fab fa-linkedin me-2"></i>LinkedIn
                             </a>
-                            <a href="https://github.com/sharbatc" class="btn btn-outline-dark" target="_blank">
+                            <a href="https://github.com/sharbatc" class="btn btn-outline-dark github-btn" target="_blank">
                                 <i class="fab fa-github me-2"></i>GitHub
                             </a>
-                            <a href="https://orcid.org/0000-0002-1234-5678" class="btn btn-outline-success" target="_blank">
-                                <i class="fab fa-orcid me-2"></i>ORCID
+                            <a href="https://scholar.google.com/citations?user=6k8v7wEAAAAJ" class="btn btn-outline-success" target="_blank">
+                                <i class="ai ai-google-scholar me-2"></i>Google Scholar
                             </a>
                         </div>
                     </div>
@@ -70,19 +70,19 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="mb-0">
-                            <i class="fas fa-microscope me-2"></i>Research Collaboration
+                            <i class="fas fa-microscope me-2"></i>{{ translations[lang]['contact_research'] }}
                         </h4>
                     </div>
                     <div class="card-body">
-                        <p>I'm always interested in discussing:</p>
+                        <p>{{ translations[lang]['contact_research_interested'] }}</p>
                         <ul>
-                            <li>Neuroscience research collaborations</li>
-                            <li>Postural control and locomotion studies</li>
-                            <li>Computational neuroscience projects</li>
-                            <li>Zebrafish behavioral analysis</li>
-                            <li>Academic mentoring and career advice</li>
+                            <li>{{ translations[lang]['contact_collab_neuro'] }}</li>
+                            <li>{{ translations[lang]['contact_collab_postural'] }}</li>
+                            <li>{{ translations[lang]['contact_collab_comp'] }}</li>
+                            <li>{{ translations[lang]['contact_collab_zebrafish'] }}</li>
+                            <li>{{ translations[lang]['contact_collab_mentoring'] }}</li>
                         </ul>
-                        <p class="mb-0">Feel free to reach out via email to discuss potential collaborations or if you have questions about my research!</p>
+                        <p class="mb-0">{{ translations[lang]['contact_reach_out'] }}</p>
                     </div>
                 </div>
             </section>
@@ -90,10 +90,10 @@
             <!-- Location -->
             <section class="mb-5">
                 <div class="text-center">
-                    <h4><i class="fas fa-map-marker-alt me-2"></i>Current Location</h4>
+                    <h4><i class="fas fa-map-marker-alt me-2"></i>{{ translations[lang]['contact_location'] }}</h4>
                     <p class="lead">Paris, France</p>
-                    <p class="text-muted">Institut des Neurosciences Paris-Saclay<br>
-                    CNRS - Université Paris-Saclay</p>
+                    <p class="text-muted">{{ translations[lang]['contact_institute'] }}<br>
+                    {{ translations[lang]['contact_affiliation'] }}</p>
                 </div>
             </section>
 

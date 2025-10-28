@@ -1,3 +1,41 @@
+[data-theme="dark"] .btn-outline-info,
+[data-theme="dark"] .btn-outline-primary,
+[data-theme="dark"] .btn-outline-dark,
+[data-theme="dark"] .btn-outline-success {
+    border-color: #fff !important;
+    color: #fff !important;
+    background-color: transparent !important;
+}
+[data-theme="dark"] .btn-outline-info:hover,
+[data-theme="dark"] .btn-outline-primary:hover,
+[data-theme="dark"] .btn-outline-dark.github-btn:hover,
+[data-theme="dark"] .btn-outline-success:hover {
+    background-color: #fff !important;
+    color: #111 !important;
+}
+/* Fix GitHub icon visibility in dark mode */
+/* Fix GitHub icon visibility in dark mode (button and icon) */
+[data-theme="dark"] .github-btn {
+    background-color: transparent !important;
+    border-color: #fff !important;
+    color: #fff !important;
+}
+[data-theme="dark"] .github-btn .fa-github {
+    color: #fff !important;
+}
+
+/* Google Scholar icon (Academicons) */
+.ai-google-scholar:before, .ai.ai-google-scholar:before {
+    font-family: 'Academicons';
+    content: "\e900";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 /* Academic Website Custom Styles */
 
 /* Global font size reduction */
@@ -871,4 +909,28 @@ h6 { font-size: 1rem; }
     header.text-center {
         margin-top: 1.5rem;
     }
+}
+
+/* Tab styling improvements */
+.nav-pills .nav-link {
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+    margin-right: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: var(--theme-bg-secondary);
+    border-color: var(--secondary-color);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #ffffff !important; /* Force white text on active tab */
+}
+
+.nav-pills .nav-link.active:hover {
+    background-color: var(--secondary-color) !important;
+    color: #ffffff !important;
 }

@@ -8,11 +8,11 @@
         <div class="col-lg-10">
             <!-- Page Header -->
             <header class="text-center mb-5">
-                <h1 class="display-4 fw-bold mb-3">Curriculum Vitae</h1>
-                <p class="lead">Academic and Professional Experience</p>
+                <h1 class="display-4 fw-bold mb-3">{{ translations[lang]['cv_title'] }}</h1>
+                <p class="lead">{{ translations[lang]['cv_subtitle'] }}</p>
                 <div class="mb-4">
                     <a href="/files/cv.pdf" class="btn btn-primary btn-lg" target="_blank">
-                        <i class="fas fa-download me-2"></i>Download PDF
+                        <i class="fas fa-download me-2"></i>{{ translations[lang]['cv_download'] }}
                     </a>
                 </div>
             </header>
@@ -20,16 +20,16 @@
             <!-- Education Section -->
             <section class="mb-5">
                 <h2 class="border-bottom pb-2 mb-4">
-                    <i class="fas fa-graduation-cap me-2"></i>Education
+                    <i class="fas fa-graduation-cap me-2"></i>{{ translations[lang]['cv_education'] }}
                 </h2>
                 <div class="row">
                     <div class="col-md-3 text-muted">
-                        <strong>2019-2023</strong>
+                        <strong>2020-2024</strong>
                     </div>
                     <div class="col-md-9">
-                        <h4>Ph.D. in Physics (Neuroscience)</h4>
-                        <p class="text-muted">Sorbonne Université, Paris, France</p>
-                        <p>Thesis: "Biomechanics of Postural Control in Zebrafish"</p>
+                        <h4>{{ translations[lang]['cv_phd_title'] }}</h4>
+                        <p class="text-muted">{{ translations[lang]['cv_phd_university'] }}</p>
+                        <p>{{ translations[lang]['cv_phd_thesis'] }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -37,9 +37,9 @@
                         <strong>2016-2018</strong>
                     </div>
                     <div class="col-md-9">
-                        <h4>M.S. in Life Sciences & Technology</h4>
-                        <p class="text-muted">École Polytechnique Fédérale de Lausanne (EPFL), Switzerland</p>
-                        <p>Specialization: Neuroscience and Computational Biology</p>
+                        <h4>{{ translations[lang]['cv_ms_title'] }}</h4>
+                        <p class="text-muted">{{ translations[lang]['cv_ms_university'] }}</p>
+                        <p>{{ translations[lang]['cv_ms_spec'] }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -47,9 +47,9 @@
                         <strong>2010-2014</strong>
                     </div>
                     <div class="col-md-9">
-                        <h4>B.Tech. in Computer Science & Engineering</h4>
-                        <p class="text-muted">Indian Institute of Technology (IIT) Kanpur, India</p>
-                        <p>Graduated with Honors</p>
+                        <h4>{{ translations[lang]['cv_btech_title'] }}</h4>
+                        <p class="text-muted">{{ translations[lang]['cv_btech_university'] }}</p>
+                        <p>{{ translations[lang]['cv_btech_minor'] }}</p>
                     </div>
                 </div>
             </section>
@@ -57,17 +57,28 @@
             <!-- Work Experience Section -->
             <section class="mb-5">
                 <h2 class="border-bottom pb-2 mb-4">
-                    <i class="fas fa-briefcase me-2"></i>Work Experience
+                    <i class="fas fa-briefcase me-2"></i>{{ translations[lang]['cv_experience'] }}
                 </h2>
                 <div class="row">
                     <div class="col-md-3 text-muted">
-                        <strong>2023-Present</strong>
+                        <strong>2019-2020</strong>
                     </div>
                     <div class="col-md-9">
-                        <h4>Postdoctoral Researcher</h4>
-                        <p class="text-muted">Institut des Neurosciences Paris-Saclay, CNRS, France</p>
-                        <p><strong>Supervisor:</strong> Dr. Tihana Jovanic</p>
-                        <p>Research focus: Neural mechanisms of postural control and locomotion in zebrafish</p>
+                        <h4>{{ translations[lang]['cv_ra_title'] }}</h4>
+                        <p class="text-muted">{{ translations[lang]['cv_ra_university'] }}</p>
+                        <p><strong>{{ translations[lang]['cv_ra_supervisor'] }}</strong> Dr. Athena Akrami</p>
+                        <p>{{ translations[lang]['cv_ra_focus'] }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 text-muted">
+                        <strong>2025-Present</strong>
+                    </div>
+                    <div class="col-md-9">
+                        <h4>{{ translations[lang]['cv_postdoc_title'] }}</h4>
+                        <p class="text-muted">{{ translations[lang]['cv_postdoc_university'] }}</p>
+                        <p><strong>{{ translations[lang]['cv_ra_supervisor'] }}</strong> Dr. Tihana Jovanic</p>
+                        <p>{{ translations[lang]['cv_postdoc_focus'] }}</p>
                     </div>
                 </div>
             </section>
@@ -75,11 +86,11 @@
             <!-- Skills Section -->
             <section class="mb-5">
                 <h2 class="border-bottom pb-2 mb-4">
-                    <i class="fas fa-cogs me-2"></i>Technical Skills
+                    <i class="fas fa-cogs me-2"></i>{{ translations[lang]['cv_skills'] }}
                 </h2>
                 <div class="row">
                     <div class="col-md-6">
-                        <h5>Programming Languages</h5>
+                        <h5>{{ translations[lang]['cv_programming'] }}</h5>
                         <ul>
                             <li>Python (Advanced)</li>
                             <li>MATLAB (Advanced)</li>
@@ -89,7 +100,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <h5>Research Tools</h5>
+                        <h5>{{ translations[lang]['cv_research_tools'] }}</h5>
                         <ul>
                             <li>High-speed imaging</li>
                             <li>Behavioral analysis</li>
@@ -104,25 +115,25 @@
             <!-- Languages Section -->
             <section class="mb-5">
                 <h2 class="border-bottom pb-2 mb-4">
-                    <i class="fas fa-language me-2"></i>Languages
+                    <i class="fas fa-language me-2"></i>{{ translations[lang]['cv_languages'] }}
                 </h2>
                 <div class="row">
                     <div class="col-md-4">
-                        <strong>Bengali:</strong> Native
+                        <strong>{{ translations[lang]['cv_lang_bengali'] }}</strong> {{ translations[lang]['cv_lang_native'] }}
                     </div>
                     <div class="col-md-4">
-                        <strong>English:</strong> Fluent
+                        <strong>{{ translations[lang]['cv_lang_english'] }}</strong> {{ translations[lang]['cv_lang_fluent'] }}
                     </div>
                     <div class="col-md-4">
-                        <strong>French:</strong> Intermediate
+                        <strong>{{ translations[lang]['cv_lang_french'] }}</strong> {{ translations[lang]['cv_lang_intermediate'] }}
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-4">
-                        <strong>Hindi:</strong> Fluent
+                        <strong>{{ translations[lang]['cv_lang_hindi'] }}</strong> {{ translations[lang]['cv_lang_fluent'] }}
                     </div>
                     <div class="col-md-4">
-                        <strong>German:</strong> Basic
+                        <strong>{{ translations[lang]['cv_lang_german'] }}</strong> {{ translations[lang]['cv_lang_basic'] }}
                     </div>
                 </div>
             </section>

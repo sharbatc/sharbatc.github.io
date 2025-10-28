@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Academicons for Google Scholar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
     <link href="http://localhost:8000/static/css/main.css" rel="stylesheet">
     
     <!-- Meta tags -->
@@ -61,8 +63,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/bn/blog">
-                            <i class="fas fa-blog me-1"></i>ব্লগ
+                        <a class="nav-link " href="/bn/contact">
+                            <i class="fas fa-envelope me-1"></i>যোগাযোগ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/bn/cv">
+                            <i class="fas fa-file-alt me-1"></i>সিভি
                         </a>
                     </li>
                     <li class="nav-item">
@@ -81,13 +88,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/bn/cv">
-                            <i class="fas fa-file-alt me-1"></i>সিভি
+                        <a class="nav-link " href="/bn/blog">
+                            <i class="fas fa-blog me-1"></i>ব্লগ
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/bn/contact">
-                            <i class="fas fa-envelope me-1"></i>যোগাযোগ
                         </a>
                     </li>
                 </ul>
@@ -139,11 +143,11 @@
         <div class="col-lg-10">
             <!-- Page Header -->
             <header class="text-center mb-5">
-                <h1 class="display-4 fw-bold mb-3">Curriculum Vitae</h1>
-                <p class="lead">Academic and Professional Experience</p>
+                <h1 class="display-4 fw-bold mb-3">জীবনবৃত্তান্ত</h1>
+                <p class="lead">একাডেমিক এবং পেশাগত অভিজ্ঞতা</p>
                 <div class="mb-4">
                     <a href="/files/cv.pdf" class="btn btn-primary btn-lg" target="_blank">
-                        <i class="fas fa-download me-2"></i>Download PDF
+                        <i class="fas fa-download me-2"></i>পিডিএফ ডাউনলোড
                     </a>
                 </div>
             </header>
@@ -151,16 +155,16 @@
             <!-- Education Section -->
             <section class="mb-5">
                 <h2 class="border-bottom pb-2 mb-4">
-                    <i class="fas fa-graduation-cap me-2"></i>Education
+                    <i class="fas fa-graduation-cap me-2"></i>শিক্ষা
                 </h2>
                 <div class="row">
                     <div class="col-md-3 text-muted">
-                        <strong>2019-2023</strong>
+                        <strong>2020-2024</strong>
                     </div>
                     <div class="col-md-9">
-                        <h4>Ph.D. in Physics (Neuroscience)</h4>
-                        <p class="text-muted">Sorbonne Université, Paris, France</p>
-                        <p>Thesis: "Biomechanics of Postural Control in Zebrafish"</p>
+                        <h4>পদার্থবিজ্ঞানে পিএইচডি (নিউরোসায়েন্স)</h4>
+                        <p class="text-muted">সরবন বিশ্ববিদ্যালয়, প্যারিস, ফ্রান্স</p>
+                        <p>থিসিস: &#34;পোস্টুরাল নিয়ন্ত্রণের জন্য আচরণগত কৌশল এবং নিউরাল সার্কিট&#34;</p>
                     </div>
                 </div>
                 <div class="row">
@@ -168,9 +172,9 @@
                         <strong>2016-2018</strong>
                     </div>
                     <div class="col-md-9">
-                        <h4>M.S. in Life Sciences & Technology</h4>
-                        <p class="text-muted">École Polytechnique Fédérale de Lausanne (EPFL), Switzerland</p>
-                        <p>Specialization: Neuroscience and Computational Biology</p>
+                        <h4>জীববিজ্ঞান ও প্রযুক্তিতে এমএস</h4>
+                        <p class="text-muted">ইকোল পলিটেকনিক ফেডেরাল দে লোজান (EPFL), সুইজারল্যান্ড</p>
+                        <p>বিশেষীকরণ: নিউরোসায়েন্স</p>
                     </div>
                 </div>
                 <div class="row">
@@ -178,9 +182,9 @@
                         <strong>2010-2014</strong>
                     </div>
                     <div class="col-md-9">
-                        <h4>B.Tech. in Computer Science & Engineering</h4>
-                        <p class="text-muted">Indian Institute of Technology (IIT) Kanpur, India</p>
-                        <p>Graduated with Honors</p>
+                        <h4>কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিংয়ে বি.টেক</h4>
+                        <p class="text-muted">ভারতীয় প্রযুক্তি ইনস্টিটিউট (IIT) কানপুর, ভারত</p>
+                        <p>ভাষাতত্ত্ব এবং ইংরেজি সাহিত্যে মাইনর</p>
                     </div>
                 </div>
             </section>
@@ -188,17 +192,28 @@
             <!-- Work Experience Section -->
             <section class="mb-5">
                 <h2 class="border-bottom pb-2 mb-4">
-                    <i class="fas fa-briefcase me-2"></i>Work Experience
+                    <i class="fas fa-briefcase me-2"></i>কর্ম অভিজ্ঞতা
                 </h2>
                 <div class="row">
                     <div class="col-md-3 text-muted">
-                        <strong>2023-Present</strong>
+                        <strong>2019-2020</strong>
                     </div>
                     <div class="col-md-9">
-                        <h4>Postdoctoral Researcher</h4>
-                        <p class="text-muted">Institut des Neurosciences Paris-Saclay, CNRS, France</p>
-                        <p><strong>Supervisor:</strong> Dr. Tihana Jovanic</p>
-                        <p>Research focus: Neural mechanisms of postural control and locomotion in zebrafish</p>
+                        <h4>গবেষণা সহায়ক</h4>
+                        <p class="text-muted">সেইনসবারি ওয়েলকাম সেন্টার, UCL, লন্ডন, যুক্তরাজ্য</p>
+                        <p><strong>সুপারভাইজার:</strong> Dr. Athena Akrami</p>
+                        <p>গবেষণার ফোকাস: ইঁদুরের কার্যকরী স্মৃতি এবং আচরণের জন্য পদ্ধতি উন্নয়ন</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 text-muted">
+                        <strong>2025-Present</strong>
+                    </div>
+                    <div class="col-md-9">
+                        <h4>পোস্টডক্টরাল গবেষক</h4>
+                        <p class="text-muted">ইনস্টিটিউট দে নিউরোসায়েন্সেস প্যারিস-স্যাক্লে, CNRS, ফ্রান্স</p>
+                        <p><strong>সুপারভাইজার:</strong> Dr. Tihana Jovanic</p>
+                        <p>গবেষণার ফোকাস: প্রেরণা এবং নেভিগেশনের আচরণ ও নিউরাল সার্কিট</p>
                     </div>
                 </div>
             </section>
@@ -206,11 +221,11 @@
             <!-- Skills Section -->
             <section class="mb-5">
                 <h2 class="border-bottom pb-2 mb-4">
-                    <i class="fas fa-cogs me-2"></i>Technical Skills
+                    <i class="fas fa-cogs me-2"></i>প্রযুক্তিগত দক্ষতা
                 </h2>
                 <div class="row">
                     <div class="col-md-6">
-                        <h5>Programming Languages</h5>
+                        <h5>প্রোগ্রামিং ভাষা</h5>
                         <ul>
                             <li>Python (Advanced)</li>
                             <li>MATLAB (Advanced)</li>
@@ -220,7 +235,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <h5>Research Tools</h5>
+                        <h5>গবেষণা সরঞ্জাম</h5>
                         <ul>
                             <li>High-speed imaging</li>
                             <li>Behavioral analysis</li>
@@ -235,25 +250,25 @@
             <!-- Languages Section -->
             <section class="mb-5">
                 <h2 class="border-bottom pb-2 mb-4">
-                    <i class="fas fa-language me-2"></i>Languages
+                    <i class="fas fa-language me-2"></i>ভাষা
                 </h2>
                 <div class="row">
                     <div class="col-md-4">
-                        <strong>Bengali:</strong> Native
+                        <strong>বাংলা:</strong> মাতৃভাষা
                     </div>
                     <div class="col-md-4">
-                        <strong>English:</strong> Fluent
+                        <strong>ইংরেজি:</strong> সাবলীল
                     </div>
                     <div class="col-md-4">
-                        <strong>French:</strong> Intermediate
+                        <strong>ফরাসি:</strong> মধ্যম
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-4">
-                        <strong>Hindi:</strong> Fluent
+                        <strong>হিন্দি:</strong> সাবলীল
                     </div>
                     <div class="col-md-4">
-                        <strong>German:</strong> Basic
+                        <strong>জার্মান:</strong> প্রাথমিক
                     </div>
                 </div>
             </section>

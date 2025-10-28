@@ -74,7 +74,12 @@ def load_translations():
     translations = {}
     for lang in LANGUAGES:
         with open(f"locales/{lang}.yml", "r", encoding="utf-8") as f:
-            translations.update(yaml.safe_load(f))
+            data = yaml.safe_load(f)
+            # Flatten so translations['en']['key'] is accessible
+            if lang in data:
+                translations[lang] = data[lang]
+            else:
+                translations[lang] = data
     return translations
 
 translations = load_translations()

@@ -29,7 +29,7 @@
                         </span>
                         {% endif %}
                     </div>
-                    <p class="mb-3">{{ news_item.excerpt }}</p>
+                    <p class="mb-3">{{ news_item.excerpt | safe }}</p>
                     <a href="/{{ lang }}/news/{{ news_item.slug }}" class="btn btn-outline-primary">
                         {{ translations[lang]['read_more'] or 'Read More' }} <i class="fas fa-arrow-right ms-1"></i>
                     </a>

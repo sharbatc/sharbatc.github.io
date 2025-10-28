@@ -3,51 +3,58 @@
 {% block title %}{{ talk.title }} - {{ translations[lang]['site_title'] }}{% endblock %}
 
 {% block content %}
-<div class="container-fluid px-0">
-    <!-- Talk Header -->
-    <section class="talk-header py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center">
-                    <div class="talk-meta mb-3">
-                        <span class="badge bg-light text-dark me-2">{{ talk.date.strftime('%B %Y') }}</span>
-                        {% if talk.talk_type %}
-                        <span class="badge bg-light text-dark me-2">{{ talk.talk_type }}</span>
-                        {% endif %}
-                        {% if talk.location %}
-                        <span class="badge bg-warning text-dark">{{ talk.location }}</span>
-                        {% endif %}
-                    </div>
-                    <h1 class="display-5 fw-bold mb-4">{{ talk.title }}</h1>
-                    {% if talk.venue %}
-                    <p class="lead mb-4">
-                        <i class="fas fa-calendar me-2"></i>{{ talk.venue }}
-                    </p>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Page Header -->
+            <header class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-4">{{ talk.title }}</h1>
+                {% if talk.venue %}
+                <p class="lead mb-4">
+                    <i class="fas fa-calendar me-2"></i>{{ talk.venue }}
+                </p>
+                {% endif %}
+                
+                <div class="talk-actions mb-4">
+                    {% if talk.slides_url %}
+                    <a href="{{ talk.slides_url }}" 
+                       class="btn btn-primary btn-lg me-3" 
+                       target="_blank">
+                        <i class="fas fa-presentation me-2"></i>View Slides
+                    </a>
                     {% endif %}
-                    
-                    <div class="talk-actions">
-                        {% if talk.slides_url %}
-                        <a href="{{ talk.slides_url }}" 
-                           class="btn btn-light btn-lg me-3" 
-                           target="_blank">
-                            <i class="fas fa-presentation me-2"></i>View Slides
-                        </a>
-                        {% endif %}
-                        {% if talk.recording_url %}
-                        <a href="{{ talk.recording_url }}" 
-                           class="btn btn-outline-light btn-lg me-3" 
-                           target="_blank">
-                            <i class="fas fa-video me-2"></i>Watch Recording
-                        </a>
-                        {% endif %}
-                        {% if talk.poster_url %}
-                        <a href="{{ talk.poster_url }}" 
-                           class="btn btn-outline-light btn-lg" 
-                           target="_blank">
-                            <i class="fas fa-image me-2"></i>View Poster
-                        </a>
-                        {% endif %}
+                    {% if talk.recording_url %}
+                    <a href="{{ talk.recording_url }}" 
+                       class="btn btn-outline-primary btn-lg me-3" 
+                       target="_blank">
+                        <i class="fas fa-video me-2"></i>Watch Recording
+                    </a>
+                    {% endif %}
+                    {% if talk.poster_url %}
+                    <a href="{{ talk.poster_url }}" 
+                       class="btn btn-outline-primary btn-lg" 
+                       target="_blank">
+                        <i class="fas fa-image me-2"></i>View Poster
+                    </a>
+                    {% endif %}
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <div class="row">
+                <!-- Main Content Area -->
+                <div class="col-12">
+                    <!-- Abstract/Description -->
+                    {% if talk.abstract or talk.description %}
+                    <div class="mb-5">
+                        <h3 class="mb-3">
+                            <i class="fas fa-file-text me-2"></i>Abstract
+                        </h3>
+                        <div class="content">
+                            {{ (talk.abstract or talk.description) | safe }}
+                        </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
