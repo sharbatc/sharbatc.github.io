@@ -100,12 +100,21 @@ class StaticSiteGenerator:
         print(f"✅ Created output directory: {self.output_dir}")
     
     def copy_static_files(self):
-        """Copy static files (CSS, JS, images) to output directory"""
+        """Copy static files (CSS, JS, images) and files/ to output directory"""
         static_dir = Path("static")
         if static_dir.exists():
             output_static = self.output_dir / "static"
             shutil.copytree(static_dir, output_static)
             print("✅ Copied static files")
+
+        # Copy files/ directory for downloads (e.g., PDFs)
+        files_dir = Path("files")
+        if files_dir.exists():
+            output_files = self.output_dir / "files"
+            if output_files.exists():
+                shutil.rmtree(output_files)
+            shutil.copytree(files_dir, output_files)
+            print("✅ Copied files directory (downloads)")
     
     def generate_page(self, page_path):
         """Generate a single page"""
