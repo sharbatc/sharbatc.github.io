@@ -21,11 +21,11 @@ from urllib.parse import urljoin, urlparse
 import threading
 
 class StaticSiteGenerator:
-    def __init__(self, base_url="http://localhost:8000", output_dir="dist"):
+    def __init__(self, base_url="http://localhost:8000", output_dir="dist", production_url="https://sharbat.ch/"):
         self.base_url = base_url
         self.output_dir = Path(output_dir)
+        self.production_url = production_url.rstrip('/') + '/'
         self.server_process = None
-        
         # Pages to generate (add more as needed)
         self.pages = [
             "/",
@@ -117,30 +117,37 @@ class StaticSiteGenerator:
             print("✅ Copied files directory (downloads)")
     
     def generate_page(self, page_path):
-        """Generate a single page"""
+        """Generate a single page, post-process for correct static asset and meta tags"""
         try:
             url = urljoin(self.base_url, page_path)
             response = requests.get(url, timeout=10)
-            
             if response.status_code == 200:
                 # Create directory structure
                 if page_path.endswith('/') or '.' not in page_path.split('/')[-1]:
                     file_path = self.output_dir / page_path.strip('/') / "index.html"
                 else:
                     file_path = self.output_dir / page_path.strip('/')
-                
                 file_path.parent.mkdir(parents=True, exist_ok=True)
-                
-                # Write HTML content
+
+                html = response.text
+                # Fix main.css href (match any protocol/host)
+                import re
+                html = re.sub(r'<link([^>]+)href=["\\\'](?:https?:)?//[^"\\\']*/static/css/main\\.css["\\\']', r'<link\1href="/static/css/main.css"', html)
+                html = re.sub(r'<link([^>]+)href=["\\\']/static/css/main\\.css["\\\']', r'<link\1href="/static/css/main.css"', html)
+                # Fix main.js src (match any protocol/host)
+                html = re.sub(r'<script([^>]+)src=["\\\'](?:https?:)?//[^"\\\']*/static/js/main\\.js["\\\']', r'<script\1src="/static/js/main.js"', html)
+                html = re.sub(r'<script([^>]+)src=["\\\']/static/js/main\\.js["\\\']', r'<script\1src="/static/js/main.js"', html)
+                # Fix og:url and twitter:url meta tags
+                html = re.sub(r'(<meta[^>]+property=["\\\']og:url["\\\'][^>]+content=)["\\\'][^"\\\']*["\\\']', r'\1"' + self.production_url + '"', html)
+                html = re.sub(r'(<meta[^>]+property=["\\\']twitter:url["\\\'][^>]+content=)["\\\'][^"\\\']*["\\\']', r'\1"' + self.production_url + '"', html)
+
                 with open(file_path, 'w', encoding='utf-8') as f:
-                    f.write(response.text)
-                
+                    f.write(html)
                 print(f"✅ Generated: {page_path} -> {file_path}")
                 return True
             else:
                 print(f"❌ Failed to generate {page_path}: HTTP {response.status_code}")
                 return False
-                
         except Exception as e:
             print(f"❌ Error generating {page_path}: {e}")
             return False
@@ -460,7 +467,7 @@ def main():
     print("Academic Website Static Generator")
     print("=" * 40)
     
-    generator = StaticSiteGenerator()
+    generator = StaticSiteGenerator(production_url="https://sharbat.ch/")
     
     # Handle Ctrl+C gracefully
     def signal_handler(sig, frame):

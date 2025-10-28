@@ -5,7 +5,7 @@ category: "career"
 importance: "high"
 lang: "en"
 tags: ["phd", "defense", "milestone"]
-summary: "Successfully defended my PhD thesis on zebrafish postural control at Sorbonne Université."
+summary: "Successfully defended my PhD thesis at Sorbonne Université."
 ---
 
 I've successfully defended my PhD thesis, on the 13th of December, 2024! 🎓
