@@ -22,6 +22,7 @@ import threading
 
 class StaticSiteGenerator:
     def __init__(self, base_url="http://localhost:8000", output_dir="dist", production_url="https://sharbat.ch/"):
+        # Always use localhost for server communication, but store production_url for asset rewriting
         self.base_url = base_url
         self.output_dir = Path(output_dir)
         self.production_url = production_url.rstrip('/') + '/'
@@ -130,6 +131,14 @@ class StaticSiteGenerator:
                 file_path.parent.mkdir(parents=True, exist_ok=True)
 
                 html = response.text
+                # Post-process: replace any localhost:8000/static asset references with root-relative
+                html = html.replace("http://localhost:8000/static/css/main.css", "/static/css/main.css")
+                html = html.replace("http://localhost:8000/static/js/main.js", "/static/js/main.js")
+                html = html.replace("https://localhost:8000/static/css/main.css", "/static/css/main.css")
+                html = html.replace("https://localhost:8000/static/js/main.js", "/static/js/main.js")
+                # Also fix og:url and twitter:url if needed
+                html = html.replace("http://localhost:8000/", self.production_url)
+                html = html.replace("https://localhost:8000/", self.production_url)
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(html)
                 print(f"✅ Generated: {page_path} -> {file_path}")
