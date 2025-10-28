@@ -284,31 +284,74 @@ class StaticSiteGenerator:
             print(f"⚠️  Could not discover notebooks: {e}")
     
     def generate_404_page(self):
-        """Generate a 404 page"""
+        """Generate a styled 404 page matching the main site"""
         try:
-            # Create a simple 404 page
             html_404 = """<!DOCTYPE html>
-<html lang="en">
+<html lang=\"en\">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - Sharbatanu Chatterjee</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>404 - Page Not Found | Sharbatanu Chatterjee</title>
+    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">
+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\" rel=\"stylesheet\">
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css\">
+    <link href=\"/static/css/main.css\" rel=\"stylesheet\">
 </head>
 <body>
-    <div class="container text-center mt-5">
-        <h1>404 - Page Not Found</h1>
-        <p>The page you're looking for doesn't exist.</p>
-        <a href="/" class="btn btn-primary">Go Home</a>
-    </div>
+    <!-- Navigation -->
+    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">
+        <div class=\"container\">
+            <a class=\"navbar-brand\" href=\"/en/\">
+                <i class=\"fas fa-brain me-2\"></i>
+                Sharbatanu Chatterjee
+            </a>
+            <div class=\"d-flex align-items-center\">
+                <button class=\"theme-toggle btn btn-outline-light btn-sm me-2\" type=\"button\" aria-label=\"Toggle theme\">
+                    <i class=\"fas fa-moon\" id=\"theme-icon\"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class=\"main-content d-flex flex-column justify-content-center align-items-center\" style=\"min-height: 80vh;\">
+        <div class=\"container text-center mt-5 pt-5\">
+            <h1 class=\"display-4 mb-3\"><i class=\"fas fa-exclamation-triangle text-warning me-2\"></i>404 - Page Not Found</h1>
+            <p class=\"lead mb-4\">Sorry, the page you are looking for does not exist or has been moved.</p>
+            <a href=\"/en/\" class=\"btn btn-primary btn-lg\"><i class=\"fas fa-home me-1\"></i> Go to Homepage</a>
+        </div>
+    </main>
+    <footer class=\"bg-dark text-light py-4 mt-5\">
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"col-md-6\">
+                    <p>&copy; 2024 Sharbatanu Chatterjee. All rights reserved.</p>
+                </div>
+                <div class=\"col-md-6 text-end footer-icons\">
+                    <a href=\"mailto:sharbatan.chatterjee@cnrs.fr\" class=\"text-light me-3\">
+                        <i class=\"fas fa-envelope\"></i>
+                    </a>
+                    <a href=\"https://twitter.com/sharbat_c\" class=\"text-light me-3\">
+                        <i class=\"fab fa-twitter\"></i>
+                    </a>
+                    <a href=\"https://github.com/sharbatc\" class=\"text-light me-3\">
+                        <i class=\"fab fa-github\"></i>
+                    </a>
+                    <a href=\"https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID\" class=\"text-light\">
+                        <i class=\"fas fa-graduation-cap\"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+    <script src=\"/static/js/main.js\"></script>
 </body>
 </html>"""
-            
             with open(self.output_dir / "404.html", 'w', encoding='utf-8') as f:
                 f.write(html_404)
-            
             print("✅ Generated 404.html")
-            
         except Exception as e:
             print(f"❌ Error generating 404 page: {e}")
     
