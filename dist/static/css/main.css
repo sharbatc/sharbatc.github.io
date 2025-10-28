@@ -1,3 +1,12 @@
+/* Safari fallback for theme toggling */
+[data-theme="dark"] {
+    background: #181a1b !important;
+    color: #f5f6fa !important;
+}
+[data-theme="light"] {
+    background: #fff !important;
+    color: #222 !important;
+}
 [data-theme="dark"] .btn-outline-info,
 [data-theme="dark"] .btn-outline-primary,
 [data-theme="dark"] .btn-outline-dark,
@@ -873,51 +882,12 @@ h6 { font-size: 1rem; }
 
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
-    body {
-        padding-top: 110px; /* Increased padding for mobile to prevent navbar overlap */
-    }
-
-    .container.py-5 {
-        padding-top: 2.5rem !important; /* Additional top padding for main content containers */
-    }
-
-    /* Ensure headers and first elements have enough spacing from navbar */
-    h1, h2, h3 {
-        margin-top: 1.5rem !important;
-    }
-    .main-content > *:first-child {
-        margin-top: 1.5rem !important;
-    }
-    .display-4 {
-        margin-top: 1.5rem;
-    }
-    header.text-center {
-        margin-top: 1rem;
-    }
+    /* No custom padding or margin overrides for mobile; use default Bootstrap/browser spacing */
 }
 
 /* Extra small devices (phones) */
 @media (max-width: 576px) {
-    body {
-        padding-top: 120px; /* Even more padding for small phones */
-    }
-
-    .container.py-5 {
-        padding-top: 3rem !important;
-    }
-
-    h1, h2, h3 {
-        margin-top: 2rem !important;
-    }
-    .main-content > *:first-child {
-        margin-top: 2rem !important;
-    }
-    .display-4 {
-        margin-top: 2rem;
-    }
-    header.text-center {
-        margin-top: 1.5rem;
-    }
+    /* No custom padding or margin overrides for small phones; use default Bootstrap/browser spacing */
 }
 
 /* Tab styling improvements */

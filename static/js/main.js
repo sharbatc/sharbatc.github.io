@@ -55,29 +55,33 @@ function toggleTheme() {
 function applyTheme(theme) {
     const html = document.documentElement;
     const body = document.body;
-    
+
     // Remove any existing theme classes and attributes
     html.classList.remove('light-theme', 'dark-theme');
     body.classList.remove('light-theme', 'dark-theme');
     html.removeAttribute('data-theme');
-    
+    body.removeAttribute('data-theme');
+
     // Apply new theme with multiple methods for compatibility
     if (theme === 'light') {
         html.classList.add('light-theme');
         body.classList.add('light-theme');
         html.setAttribute('data-theme', 'light');
+        body.setAttribute('data-theme', 'light');
         html.style.setProperty('color-scheme', 'light');
     } else {
         html.classList.add('dark-theme');
-        body.classList.add('dark-theme'); 
+        body.classList.add('dark-theme');
         html.setAttribute('data-theme', 'dark');
+        body.setAttribute('data-theme', 'dark');
         html.style.setProperty('color-scheme', 'dark');
     }
-    
-    // Force repaint
+
+    // Force repaint for Safari
     html.style.display = 'none';
     html.offsetHeight; // Trigger reflow
     html.style.display = '';
+    body.offsetHeight; // Extra reflow for Safari
 }
 
 function updateThemeIcon(theme) {

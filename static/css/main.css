@@ -1,3 +1,12 @@
+/* Safari fallback for theme toggling */
+[data-theme="dark"] {
+    background: #181a1b !important;
+    color: #f5f6fa !important;
+}
+[data-theme="light"] {
+    background: #fff !important;
+    color: #222 !important;
+}
 [data-theme="dark"] .btn-outline-info,
 [data-theme="dark"] .btn-outline-primary,
 [data-theme="dark"] .btn-outline-dark,
