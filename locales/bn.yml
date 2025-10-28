@@ -15,6 +15,8 @@ bn:
   nav_teaching: "শিক্ষাদান"
   nav_cv: "সিভি"
   nav_contact: "যোগাযোগ"
+  nav_cv: "সিভি"
+  nav_contact: "যোগাযোগ"
   
   # Home page
   welcome_title: "আমার হোমপেজে স্বাগতম!"

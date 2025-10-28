@@ -30,99 +30,6 @@
     <meta property="twitter:description" content="স্নায়ুবিজ্ঞানে পোস্টডক্টরাল গবেষক">
     
     
-<style>
-.news-timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.news-timeline::before {
-    content: '';
-    position: absolute;
-    left: 1rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--secondary-color), transparent);
-}
-
-.news-item {
-    position: relative;
-    margin-bottom: 2rem;
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.news-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-}
-
-.news-item::before {
-    content: '';
-    position: absolute;
-    left: -2.5rem;
-    top: 1.5rem;
-    width: 16px;
-    height: 16px;
-    background: var(--secondary-color);
-    border-radius: 50%;
-    border: 4px solid white;
-    box-shadow: 0 0 0 2px var(--secondary-color);
-}
-
-.news-item.importance-high::before {
-    background: #e74c3c;
-    box-shadow: 0 0 0 2px #e74c3c;
-}
-
-.news-item.importance-low::before {
-    background: #95a5a6;
-    box-shadow: 0 0 0 2px #95a5a6;
-}
-
-.news-date {
-    color: var(--secondary-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.news-category {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}
-
-.category-research { background-color: #3498db; }
-.category-career { background-color: #2ecc71; }
-.category-academic { background-color: #f39c12; }
-.category-personal { background-color: #9b59b6; }
-.category-general { background-color: #95a5a6; }
-
-@media (max-width: 768px) {
-    .news-timeline {
-        padding-left: 1rem;
-    }
-    
-    .news-timeline::before {
-        left: 0.5rem;
-    }
-    
-    .news-item::before {
-        left: -0.5rem;
-        width: 12px;
-        height: 12px;
-    }
-}
-</style>
-
 </head>
 <body>
     <!-- Navigation -->
@@ -237,65 +144,22 @@
     <!-- Main Content -->
     <main class="main-content">
         
-<div class="container-fluid px-0">
-    <!-- Hero Section -->
-    <section class="hero-section py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 text-center">
-                    <h1 class="display-4 mb-3 fw-bold">সর্বশেষ সংবাদ ও আপডেট</h1>
-                    <p class="lead mb-4">আমার গবেষণা এবং কর্মজীবনের সাম্প্রতিক উন্নয়ন</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Page Header -->
+            <header class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3">সর্বশেষ সংবাদ ও আপডেট</h1>
+                <p class="lead">আমার গবেষণা এবং কর্মজীবনের সাম্প্রতিক উন্নয়ন</p>
+            </header>
 
-    <!-- Main Content -->
-    <div class="container my-5">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-lg-3 col-md-4">
-                <div class="sticky-top" style="top: 100px;">
-                    <!-- Categories Filter -->
-                    
-
-                    <!-- Recent Highlights -->
-                    
-
-                    <!-- Subscribe -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="mb-0">
-                                <i class="fas fa-bell me-2"></i>Stay Updated
-                            </h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="text-muted small mb-3">
-                                Follow my research updates and academic journey. 
-                                Connect with me on social media for the latest news.
-                            </p>
-                            <div class="d-flex gap-2">
-                                <a href="https://twitter.com/sharbatc" class="btn btn-outline-primary btn-sm flex-fill">
-                                    <i class="fab fa-twitter me-1"></i>Twitter
-                                </a>
-                                <a href="https://linkedin.com/in/sharbatc" class="btn btn-outline-primary btn-sm flex-fill">
-                                    <i class="fab fa-linkedin me-1"></i>LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Content -->
-            <div class="col-lg-9 col-md-8">
+            <!-- News List -->
             
-            <!-- Empty State -->
-            <div class="text-center py-5">
-                <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
-                <h3 class="text-muted">No news updates yet</h3>
-                <p class="text-muted">Check back soon for the latest updates!</p>
-            </div>
+                <div class="text-center py-5">
+                    <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
+                    <h3 class="text-muted">No news yet</h3>
+                    <p class="text-muted">Check back soon for updates!</p>
+                </div>
             
         </div>
     </div>

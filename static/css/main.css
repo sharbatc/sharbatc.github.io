@@ -1,8 +1,8 @@
 /* Academic Website Custom Styles */
 
-/* Global font size - increased for better readability */
+/* Global font size reduction */
 html {
-    font-size: 1.1rem; /* Increased from 0.9rem for better readability */
+    font-size: 0.9rem; /* Reverted back from 1.1rem for better proportions */
 }
 
 :root {
@@ -44,25 +44,25 @@ body {
     background-color: var(--theme-bg);
     padding-top: 76px; /* Account for fixed navbar */
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 1.05rem; /* Increased from 0.95rem for better readability */
+    font-size: 0.95rem; /* Reverted back from 1.05rem for better proportions */
 }
 
-/* Adjust heading sizes for better visual hierarchy */
-h1 { font-size: calc(2.6rem + 0.8vw); }
-h2 { font-size: calc(2.1rem + 0.5vw); }
-h3 { font-size: calc(1.8rem + 0.4vw); }
-h4 { font-size: calc(1.4rem + 0.25vw); }
-h5 { font-size: 1.3rem; }
-h6 { font-size: 1.15rem; }
+/* Adjust heading sizes slightly */
+h1 { font-size: calc(2.3rem + 0.6vw); }
+h2 { font-size: calc(1.8rem + 0.3vw); }
+h3 { font-size: calc(1.5rem + 0.3vw); }
+h4 { font-size: calc(1.2rem + 0.15vw); }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
 
 /* Adjust lead text */
 .lead {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
 }
 
 /* Adjust display headings */
 .display-4 {
-    font-size: calc(2.6rem + 1.5vw);
+    font-size: calc(2.2rem + 1.2vw);
 }
 
 /* Language-specific font families */

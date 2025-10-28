@@ -2,181 +2,49 @@
 
 {% block title %}{{ translations[lang]['notebooks_title'] }} - {{ translations[lang]['site_title'] }}{% endblock %}
 
-{% block extra_head %}
-<!-- Jupyter notebook styling -->
-<style>
-.notebook-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.notebook-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.notebook-category {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.notebook-meta {
-    font-size: 0.9rem;
-    color: #6c757d;
-}
-</style>
-{% endblock %}
-
 {% block content %}
-<div class="container-fluid px-0">
-    <!-- Hero Section -->
-    <section class="hero-section py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 text-center">
-                    <h1 class="display-4 mb-3 fw-bold">{{ translations[lang]['notebooks_title'] }}</h1>
-                    <p class="lead mb-4">{{ translations[lang]['notebooks_subtitle'] }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Page Header -->
+            <header class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3">{{ translations[lang]['notebooks_title'] }}</h1>
+                <p class="lead">{{ translations[lang]['notebooks_subtitle'] }}</p>
+            </header>
 
-    <!-- Main Content -->
-    <div class="container my-5">
-        <!-- About Notebooks Section -->
-        <div class="row mb-5 pb-4 border-bottom">
-            <div class="col-lg-8 mx-auto">
-                <h3 class="mb-3">About These Notebooks</h3>
-                <p class="text-muted">
-                    These Jupyter notebooks contain interactive analyses from my research, teaching, and leisure. 
-                    Each notebook demonstrates different aspects of data analysis, from behavioral experiments 
-                    to neural imaging, to visualization. You can view them here or download them to run 
-                    interactively on your own system.
-                </p>
-                
-                <h4 class="mt-4 mb-3">Categories</h4>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-start mb-3">
-                            <span class="badge bg-info me-3 mt-1">research</span>
-                            <div>
-                                <h6 class="mb-1">Research Analysis</h6>
-                                <small class="text-muted">Core experimental data analysis from my work.</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-start mb-3">
-                            <span class="badge bg-success me-3 mt-1">tutorial</span>
-                            <div>
-                                <h6 class="mb-1">Tutorials</h6>
-                                <small class="text-muted">Educational notebooks explaining analysis techniques</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-start mb-3">
-                            <span class="badge bg-warning me-3 mt-1">visualization</span>
-                            <div>
-                                <h6 class="mb-1">Data Visualization</h6>
-                                <small class="text-muted">Interactive plots and visualization techniques</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-start mb-3">
-                            <span class="badge bg-secondary me-3 mt-1">methods</span>
-                            <div>
-                                <h6 class="mb-1">Methods</h6>
-                                <small class="text-muted">Computational methods and algorithm implementations</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-4">
-                    <h5>Running the Notebooks</h5>
-                    <p class="text-muted">
-                        To run these notebooks locally, you'll need Python with Jupyter and the required packages. 
-                        Most notebooks include installation instructions at the beginning.
-                    </p>
-                    <pre class="bg-light p-3 rounded"><code>pip install jupyter numpy pandas matplotlib seaborn scipy</code></pre>
-                </div>
-            </div>
-        </div>
-
-        {% if notebooks %}
-        <!-- Notebooks Grid -->
-        <div class="row">
-        {% for notebook in notebooks %}
-        <div class="col-lg-6 col-xl-4 mb-4">
-            <div class="card h-100 notebook-card">
-                <div class="card-body d-flex flex-column">
-                    <!-- Category Badge -->
-                    <div class="mb-2">
-                        <span class="badge bg-info notebook-category">{{ notebook.category }}</span>
-                    </div>
-                    
-                    <!-- Title -->
-                    <h5 class="card-title mb-3">{{ notebook.title }}</h5>
-                    
-                    <!-- Description -->
-                    <p class="card-text text-muted mb-3 flex-grow-1">
-                        {{ notebook.description if notebook.description else "Interactive analysis and visualization notebook." }}
-                    </p>
-                    
-                    <!-- Metadata -->
-                    <div class="notebook-meta mb-3">
-                        {% if notebook.date %}
-                        <div class="mb-1">
-                            <i class="fas fa-calendar-alt me-1"></i>
-                            {{ notebook.date }}
-                        </div>
-                        {% endif %}
-                        <div class="mb-1">
-                            <i class="fas fa-user me-1"></i>
-                            {{ notebook.author }}
-                        </div>
-                    </div>
-                    
-                    <!-- Tags -->
-                    {% if notebook.tags %}
+            <!-- Notebooks List -->
+            {% if notebooks %}
+                {% for notebook in notebooks %}
+                <div class="notebook mb-4 pb-4 {% if not loop.last %}border-bottom{% endif %}">
+                    <h4><a href="/{{ lang }}/notebooks/{{ notebook.slug }}" class="text-decoration-none">{{ notebook.title }}</a></h4>
+                    <p class="text-muted mb-2">{{ notebook.description }}</p>
                     <div class="mb-3">
-                        {% for tag in notebook.tags %}
-                        <span class="badge bg-light text-dark me-1">{{ tag }}</span>
-                        {% endfor %}
+                        {% if notebook.tags %}
+                            {% for tag in notebook.tags %}
+                            <span class="badge bg-light text-dark me-1">{{ tag }}</span>
+                            {% endfor %}
+                        {% endif %}
                     </div>
-                    {% endif %}
-                    
-                    <!-- Actions -->
-                    <div class="mt-auto">
-                        <div class="d-flex gap-2">
-                            <a href="/{{ lang }}/notebooks/{{ notebook.slug }}" 
-                               class="btn btn-primary btn-sm flex-grow-1">
-                                <i class="fas fa-eye me-1"></i>{{ translations[lang]['view_notebook'] }}
-                            </a>
-                            <a href="/static/notebooks/{{ notebook.filename }}" 
-                               class="btn btn-outline-secondary btn-sm"
-                               download>
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </div>
+                    <div>
+                        <a href="/{{ lang }}/notebooks/{{ notebook.slug }}" class="btn btn-outline-primary me-2">
+                            <i class="fas fa-eye me-1"></i>{{ translations[lang]['view_notebook'] }}
+                        </a>
+                        {% if notebook.download_url %}
+                        <a href="{{ notebook.download_url }}" class="btn btn-outline-secondary" target="_blank">
+                            <i class="fas fa-download me-1"></i>Download
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
-            </div>
+                {% endfor %}
+            {% else %}
+                <div class="text-center py-5">
+                    <i class="fas fa-book fa-3x text-muted mb-3"></i>
+                    <h3 class="text-muted">No notebooks yet</h3>
+                    <p class="text-muted">Check back soon for interactive research notebooks!</p>
+                </div>
+            {% endif %}
         </div>
-        {% endfor %}
     </div>
-    
-    {% else %}
-    <!-- Empty State -->
-    <div class="text-center py-5">
-        <i class="fas fa-book fa-3x text-muted mb-3"></i>
-        <h3 class="text-muted">No notebooks available</h3>
-        <p class="text-muted">Check back soon for interactive analysis notebooks!</p>
-    </div>
-    {% endif %}
-
-
 </div>
 {% endblock %}
