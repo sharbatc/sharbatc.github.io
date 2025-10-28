@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharbatanu Chatterjee - Researcher</title>
+    <title>Academic Activities - Sharbatanu Chatterjee - Researcher</title>
     
     <!-- CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,13 +19,13 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:8000/">
+    <meta property="og:url" content="http://localhost:8000/en/academic">
     <meta property="og:title" content="Sharbatanu Chatterjee - Researcher">
     <meta property="og:description" content="Postdoctoral researcher in neuroscience">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="http://localhost:8000/">
+    <meta property="twitter:url" content="http://localhost:8000/en/academic">
     <meta property="twitter:title" content="Sharbatanu Chatterjee - Researcher">
     <meta property="twitter:description" content="Postdoctoral researcher in neuroscience">
     
@@ -56,7 +56,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/en/">
+                        <a class="nav-link " href="/en/">
                             <i class="fas fa-home me-1"></i>Home
                         </a>
                     </li>
@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/en/academic">
+                        <a class="nav-link active" href="/en/academic">
                             <i class="fas fa-university me-1"></i>Academic Activities
                         </a>
                     </li>
@@ -103,7 +103,7 @@
                         
                         <li>
                             <a class="dropdown-item active" 
-                               href="/en/">
+                               href="/en/academic">
                                 <i class="flag-icon flag-icon-us me-2"></i>English
                                 
                             </a>
@@ -111,7 +111,7 @@
                         
                         <li>
                             <a class="dropdown-item " 
-                               href="/fr/">
+                               href="/fr/academic">
                                 <i class="flag-icon flag-icon-fr me-2"></i>Français
                                 
                             </a>
@@ -119,7 +119,7 @@
                         
                         <li>
                             <a class="dropdown-item " 
-                               href="/bn/">
+                               href="/bn/academic">
                                 <i class="flag-icon flag-icon-bd me-2"></i>বাংলা
                                 
                             </a>
@@ -135,132 +135,120 @@
     <main class="main-content">
         
 <div class="container py-5">
-    <!-- Hero Section -->
-    <div class="row align-items-center mb-5">
-        <div class="col-lg-4 text-center">
-            <img src="/static/images/personal/profile-photo.jpg" alt="Sharbatanu Chatterjee" 
-                 class="img-fluid rounded-circle shadow" style="max-width: 180px;">
-        </div>
-        <div class="col-lg-8">
-            <h1 class="display-4 fw-bold mb-3">Sharbat&#39;s homepage!</h1>
-            <p class="lead mb-4">I am Sharbatanu Chatterjee, and I go by the name Sharbat. I am a postdoctoral researcher in Paris, working in the team of Dr. Tihana Jovanic at the Institut des Neurosciences Paris-Saclay.</p>
-            <div class="d-flex gap-3">
-                <a href="/en/publications" class="btn btn-primary btn-lg">
-                    <i class="fas fa-graduation-cap me-2"></i>Publications
-                </a>
-                <a href="/en/blog" class="btn btn-outline-primary btn-lg">
-                    <i class="fas fa-blog me-2"></i>Blog
-                </a>
-            </div>
-        </div>
-    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Page Header -->
+            <header class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3">Academic Activities</h1>
+                <p class="lead">Talks, teaching, and interactive research materials</p>
+            </header>
 
-    <!-- About Sections -->
-    <div class="row">
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-primary">
-                        <i class="fas fa-brain me-2"></i>What do I do?
-                    </h3>
-                    <p class="card-text">I broadly work in the field of neuroscience - to try and figure out how brains lead to behaviour. Please check out my publications and (academic) blog articles to know more.</p>
-                    <a href="/en/publications" class="btn btn-outline-primary">
-                        Publications <i class="fas fa-arrow-right ms-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-info">
-                        <i class="fas fa-globe me-2"></i>Where do I come from?
-                    </h3>
-                    <p class="card-text">I was born in the banlieues (suburban areas) of the city of Calcutta (West Bengal, India). I spent my childhood there, and subsequently moved to Kanpur, Lausanne, London, before moving to Paris where I currently live.</p>
-                    <a href="/en/blog/where-i-come-from" class="btn btn-outline-info">
-                        Read more <i class="fas fa-arrow-right ms-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+            <!-- Navigation Pills for Sections -->
+            <ul class="nav nav-pills nav-fill mb-4" id="academic-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="talks-tab" data-bs-toggle="pill" data-bs-target="#talks" type="button" role="tab" aria-controls="talks" aria-selected="true">
+                        <i class="fas fa-microphone me-2"></i>Talks & Presentations
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="teaching-tab" data-bs-toggle="pill" data-bs-target="#teaching" type="button" role="tab" aria-controls="teaching" aria-selected="false">
+                        <i class="fas fa-chalkboard-teacher me-2"></i>Teaching & Education
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="notebooks-tab" data-bs-toggle="pill" data-bs-target="#notebooks" type="button" role="tab" aria-controls="notebooks" aria-selected="false">
+                        <i class="fas fa-book me-2"></i>Research Notebooks
+                    </button>
+                </li>
+            </ul>
 
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-success">
-                        <i class="fas fa-heart me-2"></i>What else do I do?
-                    </h3>
-                    <p class="card-text">I am interested in languages, travel, history, political theory, science communication, &amp; immigration. I blog on languages &amp; linguistics, travel, &amp; history.</p>
-                    <a href="/en/blog/what-else-i-do" class="btn btn-outline-success">
-                        Read more <i class="fas fa-arrow-right ms-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Latest Updates Row -->
-    <div class="row mt-5">
-        <div class="col-lg-6 mb-4">
-            <h3 class="mb-3">
-                <a href="/en/news" class="text-decoration-none text-warning section-heading-link">
-                    <i class="fas fa-newspaper me-2"></i>Latest News &amp; Updates
-                </a>
-            </h3>
-            
-                
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-2">
-                            <span class="badge bg-primary me-2">2025-02-01</span>
-                            <small class="text-muted">career</small>
+            <!-- Tab Content -->
+            <div class="tab-content" id="academic-content">
+                <!-- Talks Section -->
+                <div class="tab-pane fade show active" id="talks" role="tabpanel" aria-labelledby="talks-tab">
+                    <div class="talk mb-4 pb-4 border-bottom">
+                        <div class="row">
+                            <div class="col-md-3 text-muted">
+                                <strong>November 2024</strong>
+                            </div>
+                            <div class="col-md-9">
+                                <h4><a href="/en/talks/sfn2024-postural-control" class="text-decoration-none">Postural Control Mechanisms in Zebrafish</a></h4>
+                                <p class="text-muted">Society for Neuroscience Annual Meeting, Chicago</p>
+                                <p>Oral presentation on the neural circuits and biomechanics of postural control in larval zebrafish.</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-light text-dark me-1">neuroscience</span>
+                                    <span class="badge bg-light text-dark me-1">postural control</span>
+                                    <span class="badge bg-light text-dark me-1">zebrafish</span>
+                                </div>
+                                <div>
+                                    <a href="/files/sfn2024_poster.pdf" class="btn btn-sm btn-outline-primary" target="_blank">
+                                        <i class="fas fa-file-pdf me-1"></i>Slides
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <h6 class="card-title">Starting Postdoc at Institut des Neurosciences Paris-Saclay</h6>
-                        <p class="card-text text-muted">Joined Dr. Tihana Jovanic&#39;s team to study neural circuits of behavior....</p>
+                    </div>
+
+                    <!-- Coming Soon Message for Talks -->
+                    <div class="text-center py-4">
+                        <i class="fas fa-microphone fa-2x text-muted mb-3"></i>
+                        <p class="text-muted">More talks and presentations coming soon!</p>
                     </div>
                 </div>
-                
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-2">
-                            <span class="badge bg-primary me-2">2024-12-13</span>
-                            <small class="text-muted">career</small>
+
+                <!-- Teaching Section -->
+                <div class="tab-pane fade" id="teaching" role="tabpanel" aria-labelledby="teaching-tab">
+                    <div class="teaching mb-4 pb-4 border-bottom">
+                        <div class="row">
+                            <div class="col-md-3 text-muted">
+                                <strong>Autumn 2024</strong>
+                            </div>
+                            <div class="col-md-9">
+                                <h4><a href="/en/teaching/computational-neuroscience-2024" class="text-decoration-none">Computational Neuroscience</a></h4>
+                                <p class="text-muted">Guest Lecturer • Université Paris-Saclay</p>
+                                <p>Introduction to computational methods in neuroscience, focusing on neural network modeling and data analysis techniques.</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-light text-dark me-1">computational neuroscience</span>
+                                    <span class="badge bg-light text-dark me-1">modeling</span>
+                                    <span class="badge bg-light text-dark me-1">data analysis</span>
+                                </div>
+                                <div>
+                                    <a href="/files/compneuro2024_syllabus.pdf" class="btn btn-sm btn-outline-primary" target="_blank">
+                                        <i class="fas fa-file-pdf me-1"></i>Syllabus
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <h6 class="card-title">PhD Defense Completed Successfully!</h6>
-                        <p class="card-text text-muted">Successfully defended my PhD thesis on zebrafish postural control at Sorbonne Université....</p>
+                    </div>
+
+                    <!-- Coming Soon Message for Teaching -->
+                    <div class="text-center py-4">
+                        <i class="fas fa-chalkboard-teacher fa-2x text-muted mb-3"></i>
+                        <p class="text-muted">More teaching opportunities coming soon!</p>
                     </div>
                 </div>
-                
-                <a href="/en/news" class="btn btn-sm btn-outline-primary">
-                    Read more
-                </a>
-            
-        </div>
-        
-        <div class="col-lg-6 mb-4">
-            <h3 class="mb-3">
-                <a href="/en/notebooks" class="text-decoration-none text-info section-heading-link">
-                    <i class="fas fa-book me-2"></i>Jupyter Notebooks
-                </a>
-            </h3>
-            
-                
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h6 class="card-title">Test Analysis Notebook</h6>
-                        <p class="card-text text-muted">
-                            
-                                Interactive data analysis and visualization notebook.
-                            
-                        </p>
-                        <a href="/en/notebooks/test-analysis" class="btn btn-sm btn-outline-info">
-                            View Notebook
-                        </a>
-                    </div>
+
+                <!-- Notebooks Section -->
+                <div class="tab-pane fade" id="notebooks" role="tabpanel" aria-labelledby="notebooks-tab">
+                    
+                        
+                        <div class="notebook mb-4 pb-4 ">
+                            <h4><a href="/en/notebooks/test-analysis" class="text-decoration-none">Test Analysis Notebook</a></h4>
+                            <p class="text-muted mb-2"></p>
+                            <div class="mb-3">
+                                
+                            </div>
+                            <div>
+                                <a href="/en/notebooks/test-analysis" class="btn btn-outline-primary me-2">
+                                    <i class="fas fa-eye me-1"></i>View Notebook
+                                </a>
+                                
+                            </div>
+                        </div>
+                        
+                    
                 </div>
-                
-            
+            </div>
         </div>
     </div>
 </div>

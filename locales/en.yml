@@ -8,11 +8,9 @@ en:
   # Navigation
   nav_home: "Home"
   nav_blog: "Blog"
-  nav_notebooks: "Notebooks"
   nav_news: "News"
   nav_publications: "Publications"
-  nav_talks: "Talks"
-  nav_teaching: "Teaching"
+  nav_academic: "Academic Activities"
   nav_cv: "CV"
   nav_contact: "Contact Me"
   

@@ -540,6 +540,28 @@ async def teaching(request: Request, lang: str = DEFAULT_LANGUAGE):
         }
     )
 
+@app.get("/academic", response_class=HTMLResponse)
+@app.get("/{lang}/academic", response_class=HTMLResponse)
+async def academic(request: Request, lang: str = DEFAULT_LANGUAGE):
+    """Academic Activities page (talks, teaching, notebooks)"""
+    if lang not in LANGUAGES:
+        raise HTTPException(status_code=404, detail="Language not supported")
+    
+    # Get notebooks for the notebooks tab
+    notebooks_list = notebook_manager.get_notebooks(lang)
+    
+    return templates.TemplateResponse(
+        "academic.html", 
+        {
+            "request": request, 
+            "lang": lang, 
+            "available_languages": LANGUAGES,
+            "page": "academic",
+            "translations": translations,
+            "notebooks": notebooks_list
+        }
+    )
+
 @app.get("/cv", response_class=HTMLResponse)
 @app.get("/{lang}/cv", response_class=HTMLResponse)
 async def cv(request: Request, lang: str = DEFAULT_LANGUAGE):

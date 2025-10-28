@@ -8,13 +8,9 @@ bn:
   # Navigation
   nav_home: "হোম"
   nav_blog: "ব্লগ"
-  nav_notebooks: "নোটবুক"
   nav_news: "সংবাদ"
   nav_publications: "প্রকাশনা"
-  nav_talks: "বক্তৃতা"
-  nav_teaching: "শিক্ষাদান"
-  nav_cv: "সিভি"
-  nav_contact: "যোগাযোগ"
+  nav_academic: "একাডেমিক কার্যক্রম"
   nav_cv: "সিভি"
   nav_contact: "যোগাযোগ"
   

@@ -38,18 +38,12 @@ class StaticSiteGenerator:
             "/en/blog",
             "/fr/blog", 
             "/bn/blog",
-            "/en/notebooks",
-            "/fr/notebooks",
-            "/bn/notebooks",
             "/en/publications",
             "/fr/publications",
             "/bn/publications",
-            "/en/talks",
-            "/fr/talks",
-            "/bn/talks",
-            "/en/teaching",
-            "/fr/teaching", 
-            "/bn/teaching",
+            "/en/academic",
+            "/fr/academic",
+            "/bn/academic",
             "/en/cv",
             "/fr/cv",
             "/bn/cv",
@@ -312,6 +306,55 @@ class StaticSiteGenerator:
         except Exception as e:
             print(f"❌ Error generating 404 page: {e}")
     
+    def generate_redirects(self):
+        """Generate redirect pages for old routes"""
+        redirects = [
+            ("/talks", "/academic"),
+            ("/teaching", "/academic"), 
+            ("/notebooks", "/academic"),
+            ("/en/talks", "/en/academic"),
+            ("/en/teaching", "/en/academic"),
+            ("/en/notebooks", "/en/academic"),
+            ("/fr/talks", "/fr/academic"),
+            ("/fr/teaching", "/fr/academic"),
+            ("/fr/notebooks", "/fr/academic"),
+            ("/bn/talks", "/bn/academic"),
+            ("/bn/teaching", "/bn/academic"),
+            ("/bn/notebooks", "/bn/academic")
+        ]
+        
+        for old_path, new_path in redirects:
+            try:
+                # Create directory if needed
+                redirect_dir = self.output_dir / old_path.lstrip('/')
+                redirect_dir.mkdir(parents=True, exist_ok=True)
+                
+                # Create redirect HTML
+                redirect_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url={new_path}">
+    <link rel="canonical" href="{new_path}">
+    <script>
+        window.location.href = "{new_path}";
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="{new_path}">click here</a>.</p>
+</body>
+</html>"""
+                
+                with open(redirect_dir / "index.html", 'w', encoding='utf-8') as f:
+                    f.write(redirect_html)
+                    
+            except Exception as e:
+                print(f"❌ Error creating redirect {old_path} -> {new_path}: {e}")
+        
+        print(f"✅ Generated {len(redirects)} redirect pages")
+    
     def generate_site(self):
         """Generate the complete static site"""
         print("🚀 Starting static site generation...")
@@ -343,6 +386,9 @@ class StaticSiteGenerator:
             
             # Step 6: Generate 404 page
             self.generate_404_page()
+            
+            # Step 7: Generate redirects for old routes
+            self.generate_redirects()
             
             print(f"\n🎉 Site generation complete!")
             print(f"✅ Successfully generated {success_count}/{len(self.pages)} pages")
