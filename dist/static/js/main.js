@@ -37,6 +37,15 @@ function toggleTheme() {
     applyTheme(currentTheme);
     updateThemeIcon(currentTheme);
     
+    // Add visual feedback for mobile
+    const themeButton = document.querySelector('.theme-toggle');
+    if (themeButton) {
+        themeButton.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            themeButton.style.transform = 'scale(1)';
+        }, 150);
+    }
+    
     // Force a small delay to ensure changes are applied
     setTimeout(() => {
         console.log('Theme changed to:', currentTheme);
@@ -133,22 +142,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle button - ensure it works on mobile and all browsers
     const themeToggleBtn = document.querySelector('.theme-toggle');
     if (themeToggleBtn) {
-        // Remove any existing event listeners
+        // Remove any existing event listeners and onclick
         themeToggleBtn.onclick = null;
+        themeToggleBtn.removeAttribute('onclick');
         
-        // Add multiple event types for better compatibility
-        themeToggleBtn.addEventListener('click', function(e) {
+        // Use a single event listener that works for both click and touch
+        const handleThemeToggle = function(e) {
             e.preventDefault();
             e.stopPropagation();
+            
+            // Add visual feedback
+            themeToggleBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                themeToggleBtn.style.transform = 'scale(1)';
+            }, 150);
+            
             toggleTheme();
-        });
+        };
         
-        // Add touch support for mobile
-        themeToggleBtn.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleTheme();
-        });
+        // Add click event for desktop and mobile
+        themeToggleBtn.addEventListener('click', handleThemeToggle, { passive: false });
+        
+        // Add extra touch support for mobile Safari
+        if ('ontouchstart' in window) {
+            themeToggleBtn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+            
+            themeToggleBtn.addEventListener('touchend', handleThemeToggle, { passive: false });
+        }
+        
+        // Ensure button is properly styled for interaction
+        themeToggleBtn.style.cursor = 'pointer';
+        themeToggleBtn.style.userSelect = 'none';
+        themeToggleBtn.style.webkitUserSelect = 'none';
+        themeToggleBtn.style.webkitTapHighlightColor = 'transparent';
         
         // Add keyboard support
         themeToggleBtn.addEventListener('keydown', function(e) {
