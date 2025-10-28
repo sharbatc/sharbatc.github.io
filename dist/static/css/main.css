@@ -814,3 +814,30 @@ h6 { font-size: 1rem; }
 .btn-mobile-toggle i {
     transition: transform 0.2s ease;
 }
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: 95px; /* Increased padding for mobile to prevent navbar overlap */
+    }
+    
+    .container.py-5 {
+        padding-top: 2rem !important; /* Additional top padding for main content containers */
+    }
+    
+    /* Ensure headers have enough spacing from navbar */
+    .display-4 {
+        margin-top: 1rem;
+    }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 576px) {
+    body {
+        padding-top: 100px; /* Even more padding for small phones */
+    }
+    
+    .container.py-5 {
+        padding-top: 2.5rem !important;
+    }
+}
