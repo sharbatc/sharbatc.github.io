@@ -16,7 +16,7 @@ en:
   
   # Home page
   welcome_title: "Welcome to my Homepage!"
-  intro_text: "I am Sharbatanu Chatterjee, and I go by the name Sharbat. I am a postdoctoral researcher in neuroscience in Paris, working in the team of Dr. Tihana Jovanic at the Institut des Neurosciences Paris-Saclay."
+  intro_text: "I am Sharbatanu Chatterjee, and I go by the name Sharbat. I am a postdoctoral researcher in neuroscience in Paris, employed by the <a href=\"https://www.cnrs.fr/\" target=\"_blank\">CNRS</a>, and working in the team of Dr. Tihana Jovanic at the <a href=\"https://www.neuropsi.cnrs.fr/\" target=\"_blank\">Institut des Neurosciences Paris-Saclay</a>."
   what_i_do_title: "What do I do?"
   what_i_do_text: "I broadly work in the field of neuroscience - to try and figure out how brains lead to behaviour. Please check out my publications and (academic) blog articles to know more."
   what_else_title: "What else do I do?"
