@@ -10,7 +10,7 @@
         </div>
         <div class="col-lg-8">
             <h1 class="display-4 fw-bold mb-3">{{ translations[lang]['welcome_title'] }}</h1>
-            <p class="lead mb-4">{{ translations[lang]['intro_text'] }}</p>
+            <p class="lead mb-4">{{ translations[lang]['intro_text'] | safe }}</p>
             <div class="d-flex gap-2 flex-wrap">
                 <a href="/{{ lang }}/contact" class="btn btn-success btn-lg">
                     <i class="fas fa-envelope me-2"></i>{{ translations[lang]['nav_contact'] }}
