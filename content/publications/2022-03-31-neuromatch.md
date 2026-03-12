@@ -1,13 +1,13 @@
 ---
-title: "Neuromatch Academy: Teaching Computational Neuroscience with Global Accessibility in Mind"
-authors: ["Sharbatanu Chatterjee", "Other Author"]
+title: "Neuromatch Academy: a 3-week, online summer school in computational neuroscience"
+authors: ["Bernard Marius ’t Hart", "Titipat Achakulvisut", "Ayoade Adeyemi", "Athena Akrami", "Sharbatanu Chatterjee ...", "et a.r"]
 date: "2022"
-journal: "Trends in Cognitive Sciences"
+journal: "The Journal of Open Science Education"
 type: "journal"
 lang: "en"
 tags: ["computational neuroscience", "education", "open science"]
-doi: "10.1016/j.tics.2022.05.002"
-url: "https://doi.org/10.1016/j.tics.2022.05.002"
+doi: "10.21105/jose.00118"
+url: "https://doi.org/10.21105/jose.00118"
 pdf: "/files/neuromatch2022.pdf"
 abstract: |
   We describe the organization and pedagogical approach of Neuromatch Academy (NMA), an online school that taught computational neuroscience to 1757 students from 59 countries in 2020. NMA was designed with global accessibility as a core principle, and we evaluate its success using quantitative metrics of inclusion and student experience.
