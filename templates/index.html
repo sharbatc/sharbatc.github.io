@@ -5,10 +5,13 @@
     <!-- Row 1: photo + welcome title + buttons -->
     <div class="row align-items-center mb-4">
         <div class="col-lg-4 text-center">
-            <img src="/static/images/personal/profile-photo.jpg" alt="Sharbatanu Chatterjee"
-                 class="img-fluid rounded-circle shadow" style="max-width: 180px;">
+            <picture>
+                <source srcset="/static/images/personal/profile-photo.webp" type="image/webp">
+                <img src="/static/images/personal/profile-photo.jpg" alt="Sharbatanu Chatterjee"
+                     class="img-fluid rounded-circle shadow" style="max-width: 180px;" loading="eager" width="180" height="180">
+            </picture>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8 text-center text-lg-start">
             <h1 class="name-display display-4 mb-0"><span class="name-first">Sharbatanu</span> <span class="name-last">Chatterjee</span></h1>
             <p class="name-display display-4 fw-light text-muted mb-1">শর্বতনু চ্যাটার্জি</p>
             <p class="name-display text-muted fs-5 mb-0">Chercheur &middot; Researcher &middot; গবেষক</p>

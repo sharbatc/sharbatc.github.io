@@ -1,6 +1,6 @@
 ---
 title: "Adaptation of Biochemical Protocols to Handle Technology-Change for Digital Microfluidics"
-authors: ["Sharbatanu Chatterjee", "Other Author"]
+authors: ["Sharbatanu Chatterjee", "S. Bhattacharjee", "A. Banerjee", "T. -Y. Ho", "K. Chakrabarty", "B. B. Bhattacharya"]
 date: 2016-06-28
 journal: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"
 type: "article"
