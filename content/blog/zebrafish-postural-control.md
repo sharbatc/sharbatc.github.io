@@ -3,6 +3,8 @@ title: "Larval zebrafish postural control"
 date: 2025-01-31
 author: "Sharbatanu Chatterjee"
 lang: "en"
+slug: "zebrafish-postural-control"
+draft: true
 tags: ["neuroscience", "zebrafish", "research", "postural control"]
 excerpt: "Exploring how zebrafish maintain balance and what this tells us about vertebrate neural control systems."
 ---

@@ -28,54 +28,9 @@
         </div>
     </div>
 
-    <!-- About Sections -->
-    <div class="row">
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-primary">
-                        <i class="fas fa-brain me-2"></i>{{ translations[lang]['what_i_do_title'] }}
-                    </h3>
-                    <p class="card-text">{{ translations[lang]['what_i_do_text'] }}</p>
-                    <a href="/{{ lang }}/blog/what-i-do" class="btn btn-outline-primary">
-                        {{ translations[lang]['read_more'] }} <i class="fas fa-arrow-right ms-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-info">
-                        <i class="fas fa-globe me-2"></i>{{ translations[lang]['where_from_title'] }}
-                    </h3>
-                    <p class="card-text">{{ translations[lang]['where_from_text'] }}</p>
-                    <a href="/{{ lang }}/blog/where-i-come-from" class="btn btn-outline-info">
-                        {{ translations[lang]['read_more'] }} <i class="fas fa-arrow-right ms-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-success">
-                        <i class="fas fa-heart me-2"></i>{{ translations[lang]['what_else_title'] }}
-                    </h3>
-                    <p class="card-text">{{ translations[lang]['what_else_text'] }}</p>
-                    <a href="/{{ lang }}/blog/what-else-i-do" class="btn btn-outline-success">
-                        {{ translations[lang]['read_more'] }} <i class="fas fa-arrow-right ms-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Latest Updates Row -->
-    <div class="row mt-5">
-        <div class="col-lg-6 mb-4">
+    <div class="row mt-5 justify-content-center">
+        <div class="col-lg-7 mb-4">
             <h3 class="mb-3">
                 <a href="/{{ lang }}/news" class="text-decoration-none text-warning section-heading-link">
                     <i class="fas fa-newspaper me-2"></i>{{ translations[lang]['news_title'] }}
@@ -91,12 +46,12 @@
                         </div>
                         <h6 class="card-title">{{ news_item.title }}</h6>
                         <p class="card-text text-muted">{{ news_item.summary[:100] }}...</p>
+                        <a href="/{{ lang }}/news/{{ news_item.slug }}" class="btn btn-sm btn-outline-primary">
+                            {{ translations[lang]['read_more'] }} <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
                 {% endfor %}
-                <a href="/{{ lang }}/news" class="btn btn-sm btn-outline-primary">
-                    {{ translations[lang]['read_more'] }}
-                </a>
             {% else %}
             <div class="card">
                 <div class="card-body">
@@ -108,43 +63,6 @@
                     <p class="card-text text-muted">Our latest work on zebrafish postural control has been accepted...</p>
                     <a href="/{{ lang }}/news" class="btn btn-sm btn-outline-primary">
                         {{ translations[lang]['read_more'] }}
-                    </a>
-                </div>
-            </div>
-            {% endif %}
-        </div>
-        
-        <div class="col-lg-6 mb-4">
-            <h3 class="mb-3">
-                <a href="/{{ lang }}/notebooks" class="text-decoration-none text-info section-heading-link">
-                    <i class="fas fa-book me-2"></i>{{ translations[lang]['notebooks_title'] }}
-                </a>
-            </h3>
-            {% if recent_notebooks %}
-                {% for notebook in recent_notebooks %}
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h6 class="card-title">{{ notebook.title }}</h6>
-                        <p class="card-text text-muted">
-                            {% if notebook.description %}
-                                {{ (notebook.description | safe)[:120] }}{% if notebook.description|length > 120 %}...{% endif %}
-                            {% else %}
-                                Interactive data analysis and visualization notebook.
-                            {% endif %}
-                        </p>
-                        <a href="/{{ lang }}/notebooks/{{ notebook.slug }}" class="btn btn-sm btn-outline-info">
-                            {{ translations[lang]['view_notebook'] }}
-                        </a>
-                    </div>
-                </div>
-                {% endfor %}
-            {% else %}
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">Interactive Data Analysis</h6>
-                    <p class="card-text text-muted">Explore computational neuroscience through interactive Jupyter notebooks with real data analysis and visualizations.</p>
-                    <a href="/{{ lang }}/notebooks" class="btn btn-sm btn-outline-info">
-                        {{ translations[lang]['view_notebook'] }}
                     </a>
                 </div>
             </div>

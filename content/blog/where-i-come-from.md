@@ -3,6 +3,7 @@ title: "Where Do I Come From? A Journey"
 date: 2024-10-25
 author: "Sharbatanu Chatterjee"
 lang: "en"
+slug: "where-i-come-from"
 tags: ["personal", "journey", "calcutta", "paris", "immigration"]
 excerpt: "My journey from the banlieues of Calcutta to becoming a researcher in Paris - a story of places, people, and the paths that shaped me."
 ---

@@ -226,17 +226,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add loading states to buttons
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (this.getAttribute('href') && !this.getAttribute('href').startsWith('#')) {
-                this.classList.add('disabled');
-                this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>' + this.innerText;
-            }
-        });
-    });
-
     // Navbar scroll effect - disabled on mobile for better performance
     if (window.innerWidth > 768) {
         let lastScrollTop = 0;

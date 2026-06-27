@@ -5,9 +5,9 @@ author: "Sharbatanu Chatterjee"
 lang: "fr"
 slug: "what-i-do"
 tags: ["personal", "neuroscience"]
-excerpt: "I broadly work in the field of neuroscience - to try and figure out how brains lead to behaviour. ."
+excerpt: "Je travaille principalement dans le domaine des neurosciences — j'essaie de comprendre comment le cerveau donne naissance au comportement."
 ---
 
-# What do I do?
+# Que fais-je ?
 
-I broadly work in the field of neuroscience - to try and figure out how brains lead to behaviour. 
+Je travaille principalement dans le domaine des neurosciences — j'essaie de comprendre comment le cerveau donne naissance au comportement. Professionnellement, je me définis comme neuroscientifique.

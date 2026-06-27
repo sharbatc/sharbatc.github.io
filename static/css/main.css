@@ -1,3 +1,17 @@
+/* Prevent browser visited-link colour from bleeding into buttons */
+a.btn:visited,
+a.btn:visited:hover {
+    color: inherit;
+}
+a.btn-outline-primary:visited { color: #0d6efd !important; }
+a.btn-outline-success:visited  { color: #198754 !important; }
+a.btn-outline-info:visited     { color: #0dcaf0 !important; }
+a.btn-outline-warning:visited  { color: #ffc107 !important; }
+a.btn-outline-light:visited    { color: #f8f9fa !important; }
+a.btn-primary:visited,
+a.btn-success:visited          { color: #fff !important; }
+a.btn-info:visited             { color: #000 !important; }
+
 /* Safari fallback for theme toggling */
 [data-theme="dark"] {
     background: #181a1b !important;

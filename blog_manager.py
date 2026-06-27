@@ -117,6 +117,9 @@ class BlogManager:
         for file_path in blog_dir.glob('*.md'):
             try:
                 post = BlogPost(str(file_path), lang)
+                # Skip drafts
+                if post.metadata.get('draft', False):
+                    continue
                 # Check if post is for this language
                 post_lang = post.metadata.get('lang', 'en')
                 if post_lang == lang:

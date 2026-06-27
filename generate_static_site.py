@@ -12,6 +12,7 @@ Author: Sharbatanu Chatterjee
 import os
 import sys
 import shutil
+import yaml
 import requests
 import time
 import signal
@@ -150,117 +151,129 @@ class StaticSiteGenerator:
             print(f"❌ Error generating {page_path}: {e}")
             return False
     
+    def _read_frontmatter(self, filepath):
+        """Parse YAML frontmatter from a markdown file."""
+        try:
+            content = filepath.read_text(encoding='utf-8')
+            if content.startswith('---'):
+                parts = content.split('---', 2)
+                if len(parts) >= 3:
+                    return yaml.safe_load(parts[1]) or {}
+            return {}
+        except Exception:
+            return {}
+
     def discover_blog_posts(self):
         """Discover individual blog posts and add them to pages list"""
         try:
-            from pathlib import Path
-            
-            # Find all blog post files
             blog_dir = Path("content/blog")
-            if blog_dir.exists():
-                blog_files = list(blog_dir.glob("*.md"))
-                
-                languages = ['en', 'fr', 'bn']
-                for blog_file in blog_files:
-                    slug = blog_file.stem  # filename without .md extension
-                    for lang in languages:
-                        blog_url = f"/{lang}/blog/{slug}"
-                        if blog_url not in self.pages:
-                            self.pages.append(blog_url)
-                
-                print(f"✅ Discovered {len(blog_files)} blog posts for {len(languages)} languages")
-                            
+            if not blog_dir.exists():
+                return
+
+            count = 0
+            for blog_file in blog_dir.glob("*.md"):
+                meta = self._read_frontmatter(blog_file)
+                if meta.get('draft', False):
+                    continue
+                lang = meta.get('lang', 'en')
+                slug = meta.get('slug', blog_file.stem)
+                url = f"/{lang}/blog/{slug}"
+                if url not in self.pages:
+                    self.pages.append(url)
+                    count += 1
+
+            print(f"✅ Discovered {count} blog post URLs")
+
         except Exception as e:
             print(f"⚠️  Could not discover blog posts: {e}")
     
     def discover_publications(self):
         """Discover individual publications and add them to pages list"""
         try:
-            from pathlib import Path
-            
-            # Find all publication files
             pub_dir = Path("content/publications")
-            if pub_dir.exists():
-                pub_files = list(pub_dir.glob("*.md"))
-                
-                languages = ['en', 'fr', 'bn']
-                for pub_file in pub_files:
-                    slug = pub_file.stem  # filename without .md extension
-                    for lang in languages:
-                        pub_url = f"/{lang}/publications/{slug}"
-                        if pub_url not in self.pages:
-                            self.pages.append(pub_url)
-                
-                print(f"✅ Discovered {len(pub_files)} publications for {len(languages)} languages")
-                            
+            if not pub_dir.exists():
+                return
+
+            count = 0
+            for pub_file in pub_dir.glob("*.md"):
+                meta = self._read_frontmatter(pub_file)
+                lang = meta.get('lang', 'en')
+                slug = meta.get('slug', pub_file.stem)
+                url = f"/{lang}/publications/{slug}"
+                if url not in self.pages:
+                    self.pages.append(url)
+                    count += 1
+
+            print(f"✅ Discovered {count} publication URLs")
+
         except Exception as e:
             print(f"⚠️  Could not discover publications: {e}")
     
     def discover_talks(self):
         """Discover individual talks and add them to pages list"""
         try:
-            from pathlib import Path
-            
-            # Find all talk files
             talk_dir = Path("content/talks")
-            if talk_dir.exists():
-                talk_files = list(talk_dir.glob("*.md"))
-                
-                languages = ['en', 'fr', 'bn']
-                for talk_file in talk_files:
-                    slug = talk_file.stem  # filename without .md extension
-                    for lang in languages:
-                        talk_url = f"/{lang}/talks/{slug}"
-                        if talk_url not in self.pages:
-                            self.pages.append(talk_url)
-                
-                print(f"✅ Discovered {len(talk_files)} talks for {len(languages)} languages")
-                            
+            if not talk_dir.exists():
+                return
+
+            count = 0
+            for talk_file in talk_dir.glob("*.md"):
+                meta = self._read_frontmatter(talk_file)
+                lang = meta.get('lang', 'en')
+                slug = meta.get('slug', talk_file.stem)
+                url = f"/{lang}/talks/{slug}"
+                if url not in self.pages:
+                    self.pages.append(url)
+                    count += 1
+
+            print(f"✅ Discovered {count} talk URLs")
+
         except Exception as e:
             print(f"⚠️  Could not discover talks: {e}")
     
     def discover_teaching(self):
         """Discover individual teaching items and add them to pages list"""
         try:
-            from pathlib import Path
-            
-            # Find all teaching files
             teaching_dir = Path("content/teaching")
-            if teaching_dir.exists():
-                teaching_files = list(teaching_dir.glob("*.md"))
-                
-                languages = ['en', 'fr', 'bn']
-                for teaching_file in teaching_files:
-                    slug = teaching_file.stem  # filename without .md extension
-                    for lang in languages:
-                        teaching_url = f"/{lang}/teaching/{slug}"
-                        if teaching_url not in self.pages:
-                            self.pages.append(teaching_url)
-                
-                print(f"✅ Discovered {len(teaching_files)} teaching items for {len(languages)} languages")
-                            
+            if not teaching_dir.exists():
+                return
+
+            count = 0
+            for teaching_file in teaching_dir.glob("*.md"):
+                meta = self._read_frontmatter(teaching_file)
+                lang = meta.get('lang', 'en')
+                slug = meta.get('slug', teaching_file.stem)
+                url = f"/{lang}/teaching/{slug}"
+                if url not in self.pages:
+                    self.pages.append(url)
+                    count += 1
+
+            print(f"✅ Discovered {count} teaching URLs")
+
         except Exception as e:
             print(f"⚠️  Could not discover teaching items: {e}")
     
     def discover_news(self):
         """Discover individual news items and add them to pages list"""
         try:
-            from pathlib import Path
-            
-            # Find all news files
             news_dir = Path("content/news")
-            if news_dir.exists():
-                news_files = list(news_dir.glob("*.md"))
-                
-                languages = ['en', 'fr', 'bn']
-                for news_file in news_files:
-                    slug = news_file.stem  # filename without .md extension
-                    for lang in languages:
-                        news_url = f"/{lang}/news/{slug}"
-                        if news_url not in self.pages:
-                            self.pages.append(news_url)
-                
-                print(f"✅ Discovered {len(news_files)} news items for {len(languages)} languages")
+            if not news_dir.exists():
+                return
+
+            count = 0
+            for news_file in news_dir.glob("*.md"):
+                meta = self._read_frontmatter(news_file)
+                lang = meta.get('lang', 'en')
+                slug = meta.get('slug', news_file.stem)
+                url = f"/{lang}/news/{slug}"
+                if url not in self.pages:
+                    self.pages.append(url)
+                    count += 1
+
+            print(f"✅ Discovered {count} news URLs")
+
+        except Exception as e:
+            print(f"⚠️  Could not discover news items: {e}")
                             
         except Exception as e:
             print(f"⚠️  Could not discover news items: {e}")
@@ -268,23 +281,19 @@ class StaticSiteGenerator:
     def discover_notebooks(self):
         """Discover individual notebooks and add them to pages list"""
         try:
-            from pathlib import Path
-            
-            # Find all notebook files
             notebooks_dir = Path("content/notebooks")
-            if notebooks_dir.exists():
-                notebook_files = list(notebooks_dir.glob("*.ipynb"))
-                
-                languages = ['en', 'fr', 'bn']
-                for notebook_file in notebook_files:
-                    slug = notebook_file.stem  # filename without .ipynb extension
-                    for lang in languages:
-                        notebook_url = f"/{lang}/notebooks/{slug}"
-                        if notebook_url not in self.pages:
-                            self.pages.append(notebook_url)
-                
-                print(f"✅ Discovered {len(notebook_files)} notebooks for {len(languages)} languages")
-                            
+            if not notebooks_dir.exists():
+                return
+
+            count = 0
+            for notebook_file in notebooks_dir.glob("*.ipynb"):
+                url = f"/en/notebooks/{notebook_file.stem}"
+                if url not in self.pages:
+                    self.pages.append(url)
+                    count += 1
+
+            print(f"✅ Discovered {count} notebook URLs")
+
         except Exception as e:
             print(f"⚠️  Could not discover notebooks: {e}")
     

@@ -1,5 +1,5 @@
 ---
-title: "PLACEHOLDER : Multilingual brain"
+title: "The Multilingual Brain"
 date: 2024-10-15
 author: "Sharbatanu Chatterjee"
 lang: "en"
