@@ -4,6 +4,7 @@ date: 2024-12-13
 category: "career"
 importance: "high"
 lang: "fr"
+slug: "phd-defense"
 tags: ["phd", "defense", "milestone"]
 summary: "J'ai soutenu ma thèse de doctorat à Sorbonne Université avec succès."
 ---

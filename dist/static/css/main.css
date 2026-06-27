@@ -1,3 +1,20 @@
+/* Consistent cross-script font for name/subtitle display */
+.name-display {
+    font-family: 'Inter', 'Segoe UI', 'Tiro Bangla', 'Noto Sans Bengali', sans-serif;
+}
+.name-first  { font-weight: 300; }
+.name-last   { font-weight: 600; }
+
+/* Clickable news cards */
+.card-hover {
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+}
+
 /* Prevent browser visited-link colour from bleeding into buttons */
 a.btn:visited,
 a.btn:visited:hover {
@@ -128,15 +145,15 @@ h6 { font-size: 1rem; }
 
 /* Language-specific font families */
 [lang="en"] body {
-    font-family: 'Inter', 'Segoe UI', 'Source Sans Pro', sans-serif;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 [lang="fr"] body {
-    font-family: 'Inter', 'Source Sans Pro', 'Segoe UI', sans-serif;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 [lang="bn"] body {
-    font-family: 'Noto Serif Bengali', 'Noto Sans Bengali', 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'Inter', 'Segoe UI', 'Tiro Bangla', 'Noto Sans Bengali', sans-serif;
 }
 
 /* Bengali font variants for testing */
@@ -151,6 +168,25 @@ h6 { font-size: 1rem; }
 /* Better line spacing for Bengali serif */
 [lang="bn"] body {
     line-height: 1.7; /* Slightly more spacing for Bengali readability */
+}
+
+/* Bengali-specific font size overrides*/
+
+[lang="bn"] .navbar-brand {
+    font-size: 1.25rem;   /* brand/logo text */
+}
+
+[lang="bn"] .nav-link {
+    font-size: 1rem;   /* nav items */
+}
+
+[lang="bn"] .lead {
+    font-size: 1.25rem;        /* ← intro paragraphs */
+}
+
+[lang="bn"] .blog-content p,
+[lang="bn"] .news-content p {
+    font-size: 1.25rem;       /* ← blog/news reading text */
 }
 
 .main-content {

@@ -4,6 +4,7 @@ date: 2025-02-01
 category: "career"
 importance: "high"
 lang: "bn"
+slug: "postdoc-start"
 tags: ["postdoc", "career", "paris"]
 summary: "আচরণের স্নায়ুবর্তনী অধ্যয়নের জন্য ড. তিহানা জোভানিচের দলে যোগ দিয়েছি।"
 ---

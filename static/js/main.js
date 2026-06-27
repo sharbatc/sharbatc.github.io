@@ -38,13 +38,12 @@ function toggleTheme() {
     updateThemeIcon(currentTheme);
     
     // Add visual feedback for mobile
-    const themeButton = document.querySelector('.theme-toggle');
-    if (themeButton) {
-        themeButton.style.transform = 'scale(0.95)';
+    document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+        btn.style.transform = 'scale(0.95)';
         setTimeout(() => {
-            themeButton.style.transform = 'scale(1)';
+            btn.style.transform = 'scale(1)';
         }, 150);
-    }
+    });
     
     // Force a small delay to ensure changes are applied
     setTimeout(() => {
@@ -85,16 +84,15 @@ function applyTheme(theme) {
 }
 
 function updateThemeIcon(theme) {
-    const themeIcon = document.getElementById('theme-icon');
-    if (themeIcon) {
+    document.querySelectorAll('.theme-icon-i').forEach(function(themeIcon) {
         if (theme === 'light') {
-            themeIcon.className = 'fas fa-moon';
+            themeIcon.className = 'theme-icon-i fas fa-moon';
             themeIcon.setAttribute('aria-label', 'Switch to dark mode');
         } else {
-            themeIcon.className = 'fas fa-sun';
+            themeIcon.className = 'theme-icon-i fas fa-sun';
             themeIcon.setAttribute('aria-label', 'Switch to light mode');
         }
-    }
+    });
 }
 
 // Initialize theme on page load
@@ -144,8 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Theme toggle button - improved reliability for mobile
-    const themeToggleBtn = document.querySelector('.theme-toggle');
-    if (themeToggleBtn) {
+    document.querySelectorAll('.theme-toggle').forEach(function(themeToggleBtn) {
         // Remove any existing event listeners and onclick
         themeToggleBtn.onclick = null;
         themeToggleBtn.removeAttribute('onclick');
@@ -176,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggleBtn.style.userSelect = 'none';
         themeToggleBtn.style.webkitUserSelect = 'none';
         themeToggleBtn.style.webkitTapHighlightColor = 'transparent';
-    }
+    });
     
     // Add fade-in animation to cards
     const cards = document.querySelectorAll('.card');

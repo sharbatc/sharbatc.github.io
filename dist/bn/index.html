@@ -8,7 +8,7 @@
     <!-- CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans:wght@400;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Academicons for Google Scholar -->
@@ -38,15 +38,14 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/bn/">
-                <i class="fas fa-brain me-2"></i>
-                শর্বতনু চ্যাটার্জী
+                <i class="fas fa-brain me-2"></i>হোম
             </a>
             
             <!-- Mobile controls: Theme toggle and menu button -->
             <div class="d-flex align-items-center">
-                <!-- Theme Toggle (always visible) -->
-                <button class="theme-toggle btn btn-outline-light btn-sm me-2" type="button" aria-label="Toggle theme">
-                    <i class="fas fa-moon" id="theme-icon"></i>
+                <!-- Theme Toggle (mobile only, outside hamburger) -->
+                <button class="theme-toggle btn btn-outline-light btn-sm me-2 d-lg-none" type="button" aria-label="Toggle theme">
+                    <i class="theme-icon-i fas fa-moon"></i>
                 </button>
                 
                 <!-- Mobile menu button -->
@@ -57,11 +56,6 @@
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/bn/">
-                            <i class="fas fa-home me-1"></i>হোম
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link " href="/bn/contact">
                             <i class="fas fa-envelope me-1"></i>যোগাযোগ
@@ -96,7 +90,11 @@
                     </li>
                 </ul>
                 
-                <!-- Language Switcher -->
+                <!-- Desktop: Theme Toggle + Language Switcher -->
+                <div class="d-none d-lg-flex align-items-center gap-2">
+                <button class="theme-toggle btn btn-outline-light btn-sm" type="button" aria-label="Toggle theme">
+                    <i class="theme-icon-i fas fa-moon"></i>
+                </button>
                 <div class="dropdown">
                     <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-globe me-1"></i>
@@ -131,6 +129,7 @@
                         
                     </ul>
                 </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -139,71 +138,62 @@
     <main class="main-content">
         
 <div class="container py-5">
-    <!-- Hero Section -->
-    <div class="row align-items-center mb-5">
+    <!-- Row 1: photo + welcome title + buttons -->
+    <div class="row align-items-center mb-4">
         <div class="col-lg-4 text-center">
-            <img src="/static/images/personal/profile-photo.jpg" alt="Sharbatanu Chatterjee" 
+            <img src="/static/images/personal/profile-photo.jpg" alt="Sharbatanu Chatterjee"
                  class="img-fluid rounded-circle shadow" style="max-width: 180px;">
         </div>
         <div class="col-lg-8">
-            <h1 class="display-4 fw-bold mb-3">আমার হোমপেজে সুস্বাগতম্‌!</h1>
-            <p class="lead mb-4">আমার নাম শর্বতনু চ্যাটার্জী, আমি শর্বত নামে পরিচিত। আমি প্যারিসে নিউরোসায়েন্সে পোস্টডক্টরাল গবেষক, <a href="https://www.cnrs.fr/" target="_blank">CNRS</a>-এ কর্মরত, এবং ড. টিহানা জোভানিচের দলে <a href="https://www.neuropsi.cnrs.fr/" target="_blank">Institut des Neurosciences Paris-Saclay</a>-এ কাজ করছি। আমার গবেষণার কেন্দ্রে রয়েছে স্নায়ুবর্তনীগুলি কীভাবে আচরণের জন্ম দেয় তা বোঝা। আমি কলকাতার শহরতলিতে বড় হয়েছি, এবং পরবর্তীকালে কানপুর, লসান এবং লন্ডনে কাটিয়েছি — বর্তমানে প্যারিসে। ল্যাবের বাইরে, ভাষা, ইতিহাস, বিজ্ঞান যোগাযোগ এবং অভিবাসনের রাজনীতি নিয়ে আমার গভীর আগ্রহ আছে।</p>
-            <div class="d-flex gap-2 flex-wrap">
-                <a href="/bn/contact" class="btn btn-success btn-lg">
-                    <i class="fas fa-envelope me-2"></i>যোগাযোগ
-                </a>
-                <a href="/bn/cv" class="btn btn-info btn-lg">
-                    <i class="fas fa-file-alt me-2"></i>সিভি
-                </a>
-                <a href="/bn/publications" class="btn btn-primary btn-lg">
-                    <i class="fas fa-graduation-cap me-2"></i>প্রকাশনা
-                </a>
-                <a href="/bn/blog" class="btn btn-outline-primary btn-lg">
-                    <i class="fas fa-blog me-2"></i>ব্লগ
-                </a>
-            </div>
+            <h1 class="name-display display-4 mb-0"><span class="name-first">Sharbatanu</span> <span class="name-last">Chatterjee</span></h1>
+            <p class="name-display display-4 fw-light text-muted mb-1">শর্বতনু চ্যাটার্জি</p>
+            <p class="name-display text-muted fs-5 mb-0">Chercheur &middot; Researcher &middot; গবেষক</p>
         </div>
     </div>
 
-    <!-- Latest Updates Row -->
-    <div class="row mt-5 justify-content-center">
-        <div class="col-lg-7 mb-4">
-            <h3 class="mb-3">
+    <!-- Row 2: intro text + news (aligned under their respective columns) -->
+    <div class="row">
+        <div class="col-lg-4 mb-4 order-lg-1">
+            <h5 class="mb-3">
                 <a href="/bn/news" class="text-decoration-none text-warning section-heading-link">
                     <i class="fas fa-newspaper me-2"></i>সর্বশেষ সংবাদ ও আপডেট
                 </a>
-            </h3>
+            </h5>
             
                 
-                <div class="card mb-3">
+                <a href="/bn/news/postdoc-start" class="text-decoration-none">
+                <div class="card mb-3 card-hover">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-2">
                             <span class="badge bg-primary me-2">2025-02-01</span>
                             <small class="text-muted">career</small>
                         </div>
                         <h6 class="card-title">Institut des Neurosciences Paris-Saclay-এ পোস্টডক শুরু</h6>
-                        <p class="card-text text-muted">আচরণের স্নায়ুবর্তনী অধ্যয়নের জন্য ড. তিহানা জোভানিচের দলে যোগ দিয়েছি।...</p>
-                        <a href="/bn/news/postdoc-start-bn" class="btn btn-sm btn-outline-primary">
-                            আরও পড়ুন <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
+                        <p class="card-text text-muted small">আচরণের স্নায়ুবর্তনী অধ্যয়নের জন্য ড. তিহানা জোভানিচের দলে যোগ দিয়েছি।...</p>
                     </div>
                 </div>
+                </a>
                 
-                <div class="card mb-3">
+                <a href="/bn/news/phd-defense" class="text-decoration-none">
+                <div class="card mb-3 card-hover">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-2">
                             <span class="badge bg-primary me-2">2024-12-13</span>
                             <small class="text-muted">career</small>
                         </div>
                         <h6 class="card-title">পিএইচডি রক্ষা সফলভাবে সম্পন্ন!</h6>
-                        <p class="card-text text-muted">সোরবোন বিশ্ববিদ্যালয়ে সফলভাবে পিএইচডি থিসিস রক্ষা করেছি।...</p>
-                        <a href="/bn/news/phd-defense-bn" class="btn btn-sm btn-outline-primary">
-                            আরও পড়ুন <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
+                        <p class="card-text text-muted small">সোরবোন বিশ্ববিদ্যালয়ে সফলভাবে পিএইচডি থিসিস শেষ করলুম।...</p>
                     </div>
                 </div>
+                </a>
                 
             
+        </div>
+        <div class="col-lg-8 order-lg-2" style="padding-top: 3rem;">
+            <p class="lead mb-3">আমার হোমপেজে সুস্বাগতম্‌! আমার নাম শর্বতনু চ্যাটার্জি, আমি শর্বত নামে পরিচিত। আমি প্যারিসে নিউরোসায়েন্সে পোস্টডক্টরাল গবেষক, <a href="https://www.cnrs.fr/" target="_blank">CNRS</a>-এ কর্মরত, এবং ড. তিহানা য়োৱানিচের দলে <a href="https://www.neuropsi.cnrs.fr/" target="_blank">Institut des Neurosciences Paris-Saclay</a>-এ কাজ করছি।</p>
+            <p class="lead mb-3">আমার গবেষণার কেন্দ্রে রয়েছে স্নায়ুবর্তনীগুলি কীভাবে আচরণের জন্ম দেয় তা বোঝা।</p>
+            <p class="lead mb-3">আমি কলকাতার শহরতলিতে বড় হয়েছি, IIT কানপুরে কম্পিউটার বিজ্ঞান পড়েছি, তারপর লসানের EPFL-এ নিউরোসায়েন্স, এবং পরিশেষে প্যারিসের সোরবোন বিশ্ববিদ্যালয়ে পদার্থবিজ্ঞানে (নিউরোসায়েন্স) পিএইচডি সম্পন্ন করেছি।</p>
+            <p class="lead mb-4">ল্যাবের বাইরে, ভাষা, ইতিহাস, বিজ্ঞান যোগাযোগ এবং অভিবাসনের রাজনীতি নিয়ে আমার গভীর আগ্রহ আছে।</p>
         </div>
     </div>
 </div>

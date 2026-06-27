@@ -15,8 +15,11 @@ en:
   nav_contact: "Contact Me"
   
   # Home page
-  welcome_title: "Welcome to my Homepage!"
-  intro_text: "I am Sharbatanu Chatterjee, and I go by the name Sharbat. I am a postdoctoral researcher in neuroscience in Paris, employed by the <a href=\"https://www.cnrs.fr/\" target=\"_blank\">CNRS</a>, and working in the team of Dr. Tihana Jovanic at the <a href=\"https://www.neuropsi.cnrs.fr/\" target=\"_blank\">Institut des Neurosciences Paris-Saclay</a>. My research focuses on understanding how neural circuits give rise to behaviour. I grew up in the banlieues of Calcutta, and have since lived in Kanpur, Lausanne, and London — currently in Paris. Beyond the lab, I am passionate about languages, history, science communication, and the politics of migration."
+  welcome_title: "Sharbatanu Chatterjee"
+  intro_p1: "Welcome to my homepage! I am Sharbatanu Chatterjee, and I go by the name Sharbat. I am a postdoctoral researcher in neuroscience in Paris, employed by the <a href=\"https://www.cnrs.fr/\" target=\"_blank\">CNRS</a>, and working in the team of Dr. Tihana Jovanic at the <a href=\"https://www.neuropsi.cnrs.fr/\" target=\"_blank\">Institut des Neurosciences Paris-Saclay</a>."
+  intro_p2: "My research focuses on understanding how neural circuits give rise to behaviour."
+  intro_p3: "I grew up in the banlieues of Calcutta, studied Computer Science at IIT Kanpur, then Neuroscience at EPFL in Lausanne, before completing a PhD in Physics (Neuroscience) at Sorbonne Université in Paris."
+  intro_p4: "Beyond the lab, I am passionate about languages, history, science communication, and the politics of migration."
   # Blog
   blog_title: "The Sharbat Blog"
   blog_subtitle: "Thoughts on (neuro)science, research, academia, language, bureaucracy, immigration, et al."

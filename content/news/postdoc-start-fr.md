@@ -4,6 +4,7 @@ date: 2025-02-01
 category: "career"
 importance: "high"
 lang: "fr"
+slug: "postdoc-start"
 tags: ["postdoc", "career", "paris"]
 summary: "J'ai rejoint l'équipe du Dr. Tihana Jovanic pour étudier les circuits neuronaux du comportement."
 ---
