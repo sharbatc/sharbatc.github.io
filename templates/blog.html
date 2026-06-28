@@ -62,9 +62,6 @@
                     
                     <p class="mb-3">{{ post.excerpt | safe }}</p>
                     
-                    <a href="/{{ lang }}/blog/{{ post.slug }}" class="btn btn-outline-primary">
-                        {{ translations[lang]['read_more'] }} <i class="fas fa-arrow-right ms-1"></i>
-                    </a>
                 </article>
                 {% endfor %}
             {% else %}

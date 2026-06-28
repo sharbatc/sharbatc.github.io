@@ -20,7 +20,7 @@
 
     <!-- Row 2: intro text + news (aligned under their respective columns) -->
     <div class="row">
-        <div class="col-lg-4 mb-4 order-lg-1">
+        <div class="col-lg-4 mb-4 order-2 order-lg-1">
             <h5 class="mb-3">
                 <a href="/{{ lang }}/news" class="text-decoration-none text-warning section-heading-link">
                     <i class="fas fa-newspaper me-2"></i>{{ translations[lang]['news_title'] }}
@@ -50,14 +50,11 @@
                     </div>
                     <h6 class="card-title">New research paper published!</h6>
                     <p class="card-text text-muted small">Our latest work on zebrafish postural control has been accepted...</p>
-                    <a href="/{{ lang }}/news" class="btn btn-sm btn-outline-primary">
-                        {{ translations[lang]['read_more'] }}
-                    </a>
                 </div>
             </div>
             {% endif %}
         </div>
-        <div class="col-lg-8 order-lg-2" style="padding-top: 3rem;">
+        <div class="col-lg-8 order-1 order-lg-2" style="padding-top: 3rem;">
             <p class="lead mb-3">{{ translations[lang]['intro_p1'] | safe }}</p>
             <p class="lead mb-3">{{ translations[lang]['intro_p2'] | safe }}</p>
             <p class="lead mb-3">{{ translations[lang]['intro_p3'] | safe }}</p>

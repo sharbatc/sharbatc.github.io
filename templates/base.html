@@ -96,6 +96,23 @@
                     </li>
                 </ul>
                 
+                <!-- Mobile: Language Switcher (inside hamburger menu) -->
+                <div class="d-lg-none border-top border-secondary mt-1 pt-2 pb-1">
+                    <div class="d-flex gap-2 px-2">
+                        <i class="fas fa-globe text-light align-self-center me-1"></i>
+                        {% for language in available_languages %}
+                        <a class="btn btn-sm {% if language == lang %}btn-light{% else %}btn-outline-light{% endif %}"
+                           style="min-width: 5rem; text-align: center;"
+                           href="{{ get_language_switch_url(request.url.path, lang, language) }}">
+                            {% if language == 'en' %}English
+                            {% elif language == 'fr' %}Français
+                            {% elif language == 'bn' %}বাংলা
+                            {% endif %}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
                 <!-- Desktop: Theme Toggle + Language Switcher -->
                 <div class="d-none d-lg-flex align-items-center gap-2">
                 <button class="theme-toggle btn btn-outline-light btn-sm" type="button" aria-label="Toggle theme">
