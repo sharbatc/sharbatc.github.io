@@ -3,6 +3,7 @@ title: "Que fais-je d'autre ? Langues, bureaucratie, et cetera."
 date: 2024-10-24
 author: "Sharbatanu Chatterjee"
 lang: "fr"
+draft: true
 slug: "what-else-i-do"
 tags: ["langues", "linguistique", "bureaucratie", "immigration", "communication scientifique"]
 excerpt: "Au-delà de la recherche en neurosciences, j'explore le monde fascinant des langues, je navigue dans les méandres bureaucratiques, et j'essaie de rendre la science accessible à tous."

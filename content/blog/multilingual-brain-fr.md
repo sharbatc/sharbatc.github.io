@@ -3,6 +3,7 @@ title: "Le cerveau multilingue"
 date: 2024-10-15
 author: "Sharbatanu Chatterjee"
 lang: "fr"
+draft: true
 slug: "multilingual-brain"
 tags: ["linguistique", "neurosciences", "multilingue", "cerveau"]
 excerpt: "Comment le cerveau traite-t-il plusieurs langues ? Aperçus des neurosciences sur l'acquisition du langage et la cognition multilingue."

@@ -20,42 +20,32 @@ I grew up pretty comfortable and sheltered in the Calcutta in the 1990s and 2000
 
 ## The Academic Journey Begins: Kanpur
 
-At 18, I left home for the first time to pursue my undergraduate studies at the Indian Institute of Technology (IIT) Kanpur. This was my first real experience of being away from family, of adapting to a new place and culture.
+At 18, I left home for the first time to pursue my undergraduate studies at the Indian Institute of Technology (IIT) Kanpur. Kanpur taught me independence and introduced me to the world of engineering and science. It was here that I first discovered my fascination with understanding how things work at a fundamental level - a curiosity that would eventually lead me to neuroscience.
 
-Kanpur taught me independence and introduced me to the world of engineering and science. It was here that I first discovered my fascination with understanding how things work at a fundamental level - a curiosity that would eventually lead me to neuroscience.
-
-## European Adventures: Lausanne and London
+## Europe : Lausanne and London
 
 After completing my studies in India, I went to Europe. First stop: Lausanne, Switzerland, for my Master's degree at EPFL (École Polytechnique Fédérale de Lausanne) in Life Sciences and Technology. The internationality of the environment, the new academic culture which got me introduced to biological research, although from a computational perspective, and the stunning backdrop of Lake Geneva and the Alps provided a completely different perspective on life and work.
 
-From Switzerland, I moved to London for further studies. London was yet another revelation - a global city with incredible diversity, where I could find familiar Indian food around the corner while being at the heart of international research. The city's mix of tradition and innovation, its acceptance of different cultures, and its role as a global hub made it feel like a bridge between my past and future.
+From Switzerland, I moved to London for further experiences. London was yet another revelation - a global city with incredible diversity, where I could find familiar Indian food around the corner while being at the heart of international research. The city's mix of tradition and innovation, its acceptance of different cultures, and its role as a global hub made it feel like a bridge between my past and future.
 
-## Finding Home: Paris
+## Paris
 
 Finally, I arrived in Paris for my PhD and now postdoc work. Paris has become more than just a place I live - it's where I've built my research career, where I've learned to navigate French bureaucracy (a skill in itself!), and found myself in a way, intellectually.
 
-Working in French research institutions has taught me about different academic cultures, the importance of work-life balance, and the value of long, philosophical discussions over coffee. Paris, with its rich history of scientific discovery and intellectual ferment, feels like a fitting place for someone interested in understanding the brain and behavior.
+Working in research institutions in France has taught me about different academic cultures, the importance of work-life balance, and the value of long, philosophical discussions over coffee. Paris, with its rich history of scientific discovery and intellectual ferment, feels like a fitting place for someone interested in understanding the brain and behavior.
 
 ## What "Home" Means
 
-Today, when people ask where I'm from, I realize that I carry pieces of all these places with me. I have:
-
-- The intellectual curiosity and love for debate from Calcutta
-- The systematic thinking and problem-solving skills from Kanpur
-- The precision and internationality from Lausanne  
-- The global perspective and adaptability from London
-- The philosophical approach and appreciation for culture from Paris
+Today, when people ask where I'm from, I realize that I carry pieces of all these places with me.
 
 Each place has contributed to who I am as a researcher and as a person. In neuroscience, we talk about how the brain integrates different inputs to create our perception of reality. In a similar way, I think our identity is shaped by integrating all the places we've lived, the people we've met, and the experiences we've had.
 
 ## The Ongoing Journey
 
-Migration and movement aren't just about changing geography - they're about constantly adapting, learning, and growing. Each transition taught me something new about resilience, curiosity, and the universal human capacity to build connections across cultures.
+Migration and movement are about constantly adapting, learning, and growing with changing environments. Each transition taught me something new about resilience, curiosity, and the universal human capacity to build connections across cultures.
 
-As I continue my research in Paris, studying how brains adapt and learn, I can't help but see parallels with my own journey of adaptation across cities and cultures. Both involve plasticity, learning from new environments, and finding ways to thrive in unfamiliar territory.
+As I continue my research in Paris, studying how brains adapt, I can't help but see parallels with my own journey of adaptation across cities and cultures. Both involve plasticity, learning from new environments, and finding ways to thrive in unfamiliar territory.
 
 Perhaps that's what makes us human - our ability to carry our past with us while continuously adapting to new environments, much like the neural circuits I study in my lab.
 
 ---
-
-*This is part of an ongoing series about the intersection of personal experience and scientific research. What places have shaped your thinking and research?*

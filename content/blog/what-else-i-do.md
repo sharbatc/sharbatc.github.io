@@ -4,6 +4,7 @@ date: 2024-10-24
 author: "Sharbatanu Chatterjee"
 lang: "en"
 slug: "what-else-i-do"
+draft: true
 tags: ["languages", "linguistics", "bureaucracy", "immigration", "science communication"]
 excerpt: "Beyond neuroscience research, I explore the fascinating worlds of language, navigate bureaucratic mazes, and try to make science accessible to everyone."
 ---
