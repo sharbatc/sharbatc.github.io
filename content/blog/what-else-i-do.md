@@ -9,10 +9,10 @@ tags: ["languages", "linguistics", "bureaucracy", "immigration", "science commun
 excerpt: "Beyond neuroscience research, I explore the fascinating worlds of language, navigate bureaucratic mazes, and try to make science accessible to everyone."
 ---
 
-# What Else Do I Do? Languages, Bureaucracy, and the Art of Making Sense
+# What Else Do I Do?
 
-While my day job involves trying to understand how brains control behavior, my curiosities extend far beyond the laboratory. Let me tell you about the other adventures that keep me busy.
-
+So, when I redid this website with the help of Claude writing code in Python to generate and I had cleaned up a part of my homepage's front page, and 
+ 
 ## Languages: The Ultimate Neural Network
 
 As someone who studies neural circuits, I'm fascinated by perhaps the most complex neural network of all - human language. I speak several languages (Bengali, English, French, Hindi, and bits of others), and each one offers a different window into how the brain processes and organizes information.
@@ -95,5 +95,3 @@ I'm always looking for new ways to combine these interests. Maybe a project on h
 The brain is endlessly fascinating, but so is the world it tries to understand. Why limit ourselves to just one slice of that complexity?
 
 ---
-
-*What are your interests beyond your main field? How do they inform your primary work? I'd love to hear about the unexpected connections you've discovered between different areas of curiosity.*
